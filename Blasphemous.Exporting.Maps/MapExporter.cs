@@ -1,5 +1,6 @@
 ﻿using Blasphemous.CheatConsole;
 using Blasphemous.ModdingAPI;
+using Com.LuisPedroFonseca.ProCamera2D;
 using Framework.Managers;
 using Gameplay.GameControllers.Environment;
 using Gameplay.UI.Widgets;
@@ -98,10 +99,63 @@ public class MapExporter : BlasMod
         _cameraLocation = Camera.main.transform.position;
     }
 
+    protected override void OnLateUpdate()
+    {
+        // Lock camera within certain bounds
+
+        if (Input.GetKeyDown(KeyCode.RightArrow))
+        {
+            ModLog.Warn("Move right");
+            _cameraLocation += Vector2.right * CAMERA_SPEED;
+            //Camera.main.GetComponent<ProCamera2D>().MoveCameraInstantlyToPosition(_cameraLocation);
+        }
+
+        if (Input.GetKeyDown(KeyCode.LeftArrow))
+        {
+            ModLog.Warn("Move left");
+            _cameraLocation += Vector2.left * CAMERA_SPEED;
+            //Camera.main.GetComponent<ProCamera2D>().MoveCameraInstantlyToPosition(_cameraLocation);
+        }
+
+        if (Input.GetKeyDown(KeyCode.UpArrow))
+        {
+            ModLog.Warn("Move up");
+            _cameraLocation += Vector2.up * CAMERA_SPEED;
+            //Camera.main.GetComponent<ProCamera2D>().MoveCameraInstantlyToPosition(_cameraLocation);
+        }
+
+        if (Input.GetKeyDown(KeyCode.DownArrow))
+        {
+            ModLog.Warn("Move down");
+            _cameraLocation += Vector2.down * CAMERA_SPEED;
+            //Camera.main.GetComponent<ProCamera2D>().MoveCameraInstantlyToPosition(_cameraLocation);
+        }
+
+        if (Input.GetKeyDown(KeyCode.Alpha0))
+        {
+            ModLog.Info("Unfreezing time");
+            SetTimeScale(1);
+
+            //foreach (var comp in Camera.main.GetComponents<Component>())
+            //{
+            //    ModLog.Info(comp.GetType().Name);
+            //}
+        }
+
+        if (Input.GetKeyDown(KeyCode.Alpha8))
+        {
+            ModLog.Warn($"Camera: {Camera.main.transform.position}");
+        }
+
+        // Clamp camera to bounds
+        Camera.main.GetComponent<ProCamera2D>().MoveCameraInstantlyToPosition(_cameraLocation);
+    }
+
     protected override void OnRegisterServices(ModServiceProvider provider)
     {
         provider.RegisterCommand(new MapCommand());
     }
 
     private const float PARALLAX_CUTOFF = 0.3f;
+    private const float CAMERA_SPEED = 2f;
 }
