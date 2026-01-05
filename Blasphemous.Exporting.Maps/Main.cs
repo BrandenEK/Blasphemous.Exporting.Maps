@@ -4,6 +4,7 @@ namespace Blasphemous.Exporting.Maps;
 
 [BepInPlugin(ModInfo.MOD_ID, ModInfo.MOD_NAME, ModInfo.MOD_VERSION)]
 [BepInDependency("Blasphemous.ModdingAPI", "2.5.0")]
+[BepInDependency("Blasphemous.CheatConsole", "1.0.1")]
 internal class Main : BaseUnityPlugin
 {
     public static MapExporter MapExporter { get; private set; }
