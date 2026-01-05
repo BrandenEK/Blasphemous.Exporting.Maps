@@ -14,6 +14,7 @@ public class MapExporter : BlasMod
     internal MapExporter() : base(ModInfo.MOD_ID, ModInfo.MOD_NAME, ModInfo.MOD_AUTHOR, ModInfo.MOD_VERSION) { }
 
     private bool _freezeNextRoom = false;
+    private Vector2 _cameraLocation;
 
     protected override void OnInitialize()
     {
@@ -42,86 +43,28 @@ public class MapExporter : BlasMod
             return;
         _freezeNextRoom = false;
 
-        ModLog.Info("load stop");
-
         // Freeze time
         ModLog.Info("Freezing time");
         SetTimeScale(0);
 
-        // Hide fade
+        // Clear fade
         var fade = Object.FindObjectOfType<FadeWidget>();
         if (fade != null)
         {
-            ModLog.Warn("Clearing fade");
-            //fade.ClearFade();
-            //foreach (Transform t in fade.transform)
-            //    ModLog.Error(t.name);
-
+            ModLog.Info("Clearing fade");
             fade.GetComponentInChildren<Image>().enabled = false;
-            _camPos = Camera.main.transform.position;
         }
 
-        // Hide parallax
-        var list = Object.FindObjectsOfType<ParallaxController>();
-        //var parallax = Object.FindObjectOfType<ParallaxController>();
-        //if (parallax != null)
-        //{
-        //}
-
-        foreach (var parallax in list)
+        // Remove parallax
+        foreach (var parallax in Object.FindObjectsOfType<ParallaxController>())
         {
-            ModLog.Warn("Removing parallax");
+            ModLog.Info("Removing parallax");
             for (int i = 0; i < parallax.Layers.Length; i++)
             {
                 var layer = parallax.Layers[i];
                 ModLog.Error($"Layer {layer.layer.name}: {layer.speed}");
 
-                //float speed = 0;
-                //GameObject obj = null;
-
-                //if (layer.speed >= 0.85f)
-                //{
-                //    speed = 1;
-                //    obj = layer.layer;
-                //}
-                //else if (Mathf.Abs(layer.speed) <= 0.15f)
-                //{
-                //    speed = 0;
-                //    obj = layer.layer;
-                //}
-                //else
-                //{
-                //    layer.layer.SetActive(false);
-                //}
-
-                //parallax.Layers[i] = new ParallaxData()
-                //    {
-                //        layer = layer.layer,
-                //        speed = 0,
-                //    };
-
-                //if (layer.speed >= 0.9)
-                //{
-                //    parallax.Layers[i] = new ParallaxData()
-                //    {
-                //        layer = layer.layer,
-                //        speed = 1,
-                //    };
-                //}
-                //else if (layer.speed != 1 || layer.speed != 0)
-                //    layer.layer.SetActive(false);
-
-                //layer.layer = null;
-
-                //layer.speed = 0;
-
-                //parallax.Layers[i] = new ParallaxData()
-                //{
-                //    layer = layer.layer,
-                //    speed = 1
-                //};
-
-                if (Mathf.Abs(layer.speed) <= 0.3f)
+                if (Mathf.Abs(layer.speed) <= PARALLAX_CUTOFF)
                 {
                     parallax.Layers[i] = new ParallaxData()
                     {
@@ -138,22 +81,27 @@ public class MapExporter : BlasMod
         }
 
         // Hide ui
+        ModLog.Info("Hiding UI");
         Core.UI.ShowGamePlayUIForDebug = false;
 
         // Hide player
         var player = Core.Logic.Penitent;
         if (player != null)
         {
-            ModLog.Warn("Hiding player");
+            ModLog.Info("Hiding player");
+            player.Shadow.gameObject.SetActive(false);
+
             foreach (var render in player.GetComponentsInChildren<SpriteRenderer>())
                 render.enabled = false;
-
-            player.Shadow.gameObject.SetActive(false);
         }
+
+        _cameraLocation = Camera.main.transform.position;
     }
 
     protected override void OnRegisterServices(ModServiceProvider provider)
     {
         provider.RegisterCommand(new MapCommand());
     }
+
+    private const float PARALLAX_CUTOFF = 0.3f;
 }
