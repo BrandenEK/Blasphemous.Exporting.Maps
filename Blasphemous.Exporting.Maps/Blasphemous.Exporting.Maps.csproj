@@ -8,10 +8,10 @@
     <Product>Map Exporter</Product>
     <Authors>Damocles</Authors>
     <Company>Damocles</Company>
-    <Description>A mod for Blasphemous 1</Description>
+    <Description>A tool to export map images of every scene</Description>
     <Version>0.1.0</Version>
 
-    <TargetName>Maps</TargetName>
+    <TargetName>MapExporter</TargetName>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
     <DocumentationFile>bin\$(Configuration)\$(TargetName).xml</DocumentationFile>
@@ -21,7 +21,7 @@
 
   <ItemGroup>
     <PackageReference Include="Blasphemous.GameLibs" Version="4.0.67" />
-    <PackageReference Include="Blasphemous.ModdingAPI" Version="0.1.0" />
+    <PackageReference Include="Blasphemous.ModdingAPI" Version="2.5.0" />
   </ItemGroup>
 
   <Target Name="Development" AfterTargets="PostBuildEvent">
