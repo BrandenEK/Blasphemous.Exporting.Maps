@@ -17,15 +17,12 @@ public class MapExporter : BlasMod
     private bool _freezeNextRoom = false;
     private bool _isFrozen = false;
     private Vector2 _cameraLocation;
+    private Vector4 _cameraBounds;
 
-    protected override void OnInitialize()
-    {
-        // Perform initialization here
-    }
-
-    public void SetupNextRoom()
+    public void SetupNextRoom(Vector4 bounds)
     {
         _freezeNextRoom = true;
+        _cameraBounds = bounds;
     }
 
     private void SetTimeScale(float time)
@@ -98,7 +95,7 @@ public class MapExporter : BlasMod
                 render.enabled = false;
         }
 
-        _cameraLocation = Camera.main.transform.position;
+        _cameraLocation = new Vector2(_cameraBounds.x, _cameraBounds.z);
     }
 
     protected override void OnLateUpdate()
@@ -129,7 +126,14 @@ public class MapExporter : BlasMod
             _cameraLocation += Vector2.down * Time.unscaledDeltaTime * CAMERA_SPEED;
 
         // Clamp camera to bounds
-
+        if (_cameraLocation.x < _cameraBounds.x)
+            _cameraLocation.x = _cameraBounds.x;
+        if (_cameraLocation.x > _cameraBounds.y)
+            _cameraLocation.x = _cameraBounds.y;
+        if (_cameraLocation.y < _cameraBounds.z)
+            _cameraLocation.y = _cameraBounds.z;
+        if (_cameraLocation.y > _cameraBounds.w)
+            _cameraLocation.y = _cameraBounds.w;
 
         // Update camera position
         Camera.main.GetComponent<ProCamera2D>().MoveCameraInstantlyToPosition(_cameraLocation);
@@ -141,5 +145,5 @@ public class MapExporter : BlasMod
     }
 
     private const float PARALLAX_CUTOFF = 0.3f;
-    private const float CAMERA_SPEED = 60f;
+    private const float CAMERA_SPEED = 30f;
 }
