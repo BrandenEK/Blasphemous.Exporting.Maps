@@ -26,19 +26,21 @@ public class MapExporter : BlasMod
 
     public void SetupNextRoom(Vector4 bounds)
     {
-        _freezeNextRoom = true;
-        _cameraBounds = bounds;
-
         float cameraHeight = Camera.main.orthographicSize * 2;
         float cameraWidth = cameraHeight * Camera.main.aspect;
-        int imageHeight = System.Math.Max((int)(bounds.w - bounds.z + cameraHeight) * PIXEL_SCALING, HEIGHT);
-        int imageWidth = System.Math.Max((int)(bounds.y - bounds.x + cameraWidth) * PIXEL_SCALING, WIDTH);
+        float imageHeight = (bounds.w - bounds.z + cameraHeight) * PIXEL_SCALING;
+        float imageWidth = (bounds.y - bounds.x + cameraWidth) * PIXEL_SCALING;
 
-        ModLog.Error($"w: {(int)(bounds.y - bounds.x + cameraWidth) * PIXEL_SCALING}");
-        ModLog.Error($"h: {(int)(bounds.w - bounds.z + cameraHeight) * PIXEL_SCALING}");
+        if (imageWidth < WIDTH)
+            throw new System.Exception($"Invalid width for image: {imageWidth}px");
+        if (imageHeight < HEIGHT)
+            throw new System.Exception($"Invalid height for image: {imageHeight}px");
 
-        ModLog.Warn($"Creating {imageWidth}x{imageHeight} texture");
-        _bigTex = new Texture2D(imageWidth, imageHeight, TextureFormat.ARGB32, false);
+        ModLog.Warn($"Creating {(int)imageWidth}x{(int)imageHeight} texture");
+        _bigTex = new Texture2D((int)imageWidth, (int)imageHeight, TextureFormat.ARGB32, false);
+
+        _freezeNextRoom = true;
+        _cameraBounds = bounds;
     }
 
     private void SetTimeScale(float time)
