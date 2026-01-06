@@ -4,6 +4,7 @@ using Com.LuisPedroFonseca.ProCamera2D;
 using Framework.Managers;
 using Gameplay.GameControllers.Environment;
 using Gameplay.UI.Widgets;
+using System.IO;
 using Tools.Level.Layout;
 using UnityEngine;
 using UnityEngine.UI;
@@ -19,10 +20,24 @@ public class MapExporter : BlasMod
     private Vector2 _cameraLocation;
     private Vector4 _cameraBounds;
 
+    private Texture2D _bigTex;
+    private RenderTexture _renderTex;
+
     public void SetupNextRoom(Vector4 bounds)
     {
         _freezeNextRoom = true;
         _cameraBounds = bounds;
+
+        float cameraHeight = Camera.main.orthographicSize * 2;
+        float cameraWidth = cameraHeight * Camera.main.aspect;
+        int imageHeight = System.Math.Max((int)(bounds.w - bounds.z + cameraHeight) * PIXEL_SCALING, HEIGHT);
+        int imageWidth = System.Math.Max((int)(bounds.y - bounds.x + cameraWidth) * PIXEL_SCALING, WIDTH);
+
+        ModLog.Error($"w: {(int)(bounds.y - bounds.x + cameraWidth) * PIXEL_SCALING}");
+        ModLog.Error($"h: {(int)(bounds.w - bounds.z + cameraHeight) * PIXEL_SCALING}");
+
+        ModLog.Warn($"Creating {imageWidth}x{imageHeight} texture");
+        _bigTex = new Texture2D(imageWidth, imageHeight, TextureFormat.ARGB32, false);
     }
 
     private void SetTimeScale(float time)
@@ -34,6 +49,46 @@ public class MapExporter : BlasMod
         {
             obj.TimeScaleReal = time;
         }
+    }
+
+    private void PerformScreenshot()
+    {
+        ModLog.Info("Saving screenshot");
+        Camera.main.targetTexture = _renderTex;
+        RenderTexture.active = _renderTex;
+
+        var tex = new Texture2D(WIDTH, HEIGHT, TextureFormat.ARGB32, false);
+        tex.ReadPixels(new Rect(0, 0, WIDTH, HEIGHT), 0, 0);
+        tex.Apply();
+
+        var location = new Vector2((_cameraLocation.x - _cameraBounds.x) * PIXEL_SCALING, (_cameraLocation.y - _cameraBounds.z) * PIXEL_SCALING);
+        Graphics.CopyTexture(tex, 0, 0, 0, 0, WIDTH, HEIGHT, _bigTex, 0, 0, (int)location.x, (int)location.y);
+
+        byte[] bytes = _bigTex.EncodeToPNG();
+        string path = Path.Combine(FileHandler.ContentFolder, $"{Core.LevelManager.currentLevel.LevelName}.png");
+
+        File.WriteAllBytes(path, bytes);
+
+        Camera.main.targetTexture = null;
+        RenderTexture.active = null;
+        Object.Destroy(tex);
+    }
+
+    private void PerformUnfreeze()
+    {
+        ModLog.Info("Unfreezing time");
+        SetTimeScale(1);
+        _isFrozen = false;
+
+        if (_bigTex != null)
+            Object.Destroy(_bigTex);
+        _bigTex = null;
+    }
+
+    protected override void OnInitialize()
+    {
+        _renderTex = new RenderTexture(WIDTH, HEIGHT, 24, RenderTextureFormat.ARGB32);
+        _renderTex.Create();
     }
 
     protected override void OnLevelLoaded(string oldLevel, string newLevel)
@@ -98,20 +153,16 @@ public class MapExporter : BlasMod
         _cameraLocation = new Vector2(_cameraBounds.x, _cameraBounds.z);
     }
 
-    protected override void OnLateUpdate()
+    protected override void OnUpdate()
     {
-        if (_isFrozen && Input.GetKeyDown(KeyCode.Alpha0))
-        {
-            ModLog.Info("Unfreezing time");
-            SetTimeScale(1);
-            _isFrozen = false;
-        }
-
         if (Input.GetKeyDown(KeyCode.Alpha8))
         {
             ModLog.Warn($"Camera: {Camera.main.transform.position}");
         }
+    }
 
+    protected override void OnLateUpdate()
+    {
         if (!_isFrozen)
             return;
 
@@ -137,6 +188,14 @@ public class MapExporter : BlasMod
 
         // Update camera position
         Camera.main.GetComponent<ProCamera2D>().MoveCameraInstantlyToPosition(_cameraLocation);
+
+        // Handle screenshot
+        if (Input.GetKeyDown(KeyCode.Alpha7))
+            PerformScreenshot();
+
+        // Handle unfreeze
+        if (Input.GetKeyDown(KeyCode.Alpha0))
+            PerformUnfreeze();
     }
 
     protected override void OnRegisterServices(ModServiceProvider provider)
@@ -146,4 +205,7 @@ public class MapExporter : BlasMod
 
     private const float PARALLAX_CUTOFF = 0.3f;
     private const float CAMERA_SPEED = 30f;
+    private const int WIDTH = 1920;
+    private const int HEIGHT = 1080;
+    private const int PIXEL_SCALING = 32 * 3;
 }
