@@ -20,6 +20,7 @@ public class MapExporter : BlasMod
     private Vector2 _cameraLocation;
     private Vector4 _cameraBounds;
 
+    private Camera _imageCamera;
     private Texture2D _bigTex;
     private RenderTexture _renderTex;
 
@@ -54,7 +55,11 @@ public class MapExporter : BlasMod
     private void PerformScreenshot()
     {
         ModLog.Info("Saving screenshot");
-        Camera.main.targetTexture = _renderTex;
+
+        if (_imageCamera == null)
+            CreateCamera();
+
+        _imageCamera.transform.position = Camera.main.transform.position;
         RenderTexture.active = _renderTex;
 
         var tex = new Texture2D(WIDTH, HEIGHT, TextureFormat.ARGB32, false);
@@ -69,7 +74,6 @@ public class MapExporter : BlasMod
 
         File.WriteAllBytes(path, bytes);
 
-        Camera.main.targetTexture = null;
         RenderTexture.active = null;
         Object.Destroy(tex);
     }
@@ -83,6 +87,22 @@ public class MapExporter : BlasMod
         if (_bigTex != null)
             Object.Destroy(_bigTex);
         _bigTex = null;
+    }
+
+    private void CreateCamera()
+    {
+        ModLog.Info("Creating image camera");
+
+        var obj = new GameObject("Image Camera");
+        obj.transform.SetParent(Camera.main.transform.parent);
+
+        var camera = obj.AddComponent<Camera>();
+        camera.orthographic = true;
+        camera.orthographicSize = Camera.main.orthographicSize;
+        camera.aspect = Camera.main.aspect;
+        camera.targetTexture = _renderTex;
+
+        _imageCamera = camera;
     }
 
     protected override void OnInitialize()
