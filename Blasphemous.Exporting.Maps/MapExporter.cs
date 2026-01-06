@@ -4,6 +4,7 @@ using Com.LuisPedroFonseca.ProCamera2D;
 using Framework.Managers;
 using Gameplay.GameControllers.Environment;
 using Gameplay.UI.Widgets;
+using System.Collections.Generic;
 using System.IO;
 using Tools.Level.Layout;
 using UnityEngine;
@@ -14,6 +15,8 @@ namespace Blasphemous.Exporting.Maps;
 public class MapExporter : BlasMod
 {
     internal MapExporter() : base(ModInfo.MOD_ID, ModInfo.MOD_NAME, ModInfo.MOD_AUTHOR, ModInfo.MOD_VERSION) { }
+
+    private readonly Dictionary<string, RoomInfo> _rooms = [];
 
     private bool _freezeNextRoom = false;
     private bool _isFrozen = false;
@@ -104,6 +107,19 @@ public class MapExporter : BlasMod
 
     protected override void OnInitialize()
     {
+        // Load room info
+        if (!FileHandler.LoadDataAsJson("rooms.json", out RoomInfo[] infos))
+        {
+            ModLog.Error($"Failed to load room info");
+            return;
+        }
+
+        foreach (var info in infos)
+            _rooms.Add(info.Name, info);
+
+        ModLog.Info($"Loaded {_rooms.count} rooms");
+
+        // Create render texture
         _renderTex = new RenderTexture(WIDTH, HEIGHT, 24, RenderTextureFormat.ARGB32);
         _renderTex.Create();
     }
