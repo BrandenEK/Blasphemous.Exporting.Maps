@@ -6,7 +6,7 @@ namespace Blasphemous.Exporting.Maps;
 
 public class MapCommand : ModCommand
 {
-    protected override string CommandName { get; } = "map";
+    protected override string CommandName { get; } = "mapexport";
 
     protected override bool AllowUppercase { get; } = false;
 

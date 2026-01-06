@@ -107,28 +107,28 @@ public class MapExporter : BlasMod
         {
             ModLog.Warn("Move right");
             _cameraLocation += Vector2.right * CAMERA_SPEED;
-            //Camera.main.GetComponent<ProCamera2D>().MoveCameraInstantlyToPosition(_cameraLocation);
+            Camera.main.GetComponent<ProCamera2D>().MoveCameraInstantlyToPosition(_cameraLocation);
         }
 
         if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
             ModLog.Warn("Move left");
             _cameraLocation += Vector2.left * CAMERA_SPEED;
-            //Camera.main.GetComponent<ProCamera2D>().MoveCameraInstantlyToPosition(_cameraLocation);
+            Camera.main.GetComponent<ProCamera2D>().MoveCameraInstantlyToPosition(_cameraLocation);
         }
 
         if (Input.GetKeyDown(KeyCode.UpArrow))
         {
             ModLog.Warn("Move up");
             _cameraLocation += Vector2.up * CAMERA_SPEED;
-            //Camera.main.GetComponent<ProCamera2D>().MoveCameraInstantlyToPosition(_cameraLocation);
+            Camera.main.GetComponent<ProCamera2D>().MoveCameraInstantlyToPosition(_cameraLocation);
         }
 
         if (Input.GetKeyDown(KeyCode.DownArrow))
         {
             ModLog.Warn("Move down");
             _cameraLocation += Vector2.down * CAMERA_SPEED;
-            //Camera.main.GetComponent<ProCamera2D>().MoveCameraInstantlyToPosition(_cameraLocation);
+            Camera.main.GetComponent<ProCamera2D>().MoveCameraInstantlyToPosition(_cameraLocation);
         }
 
         if (Input.GetKeyDown(KeyCode.Alpha0))
@@ -148,7 +148,7 @@ public class MapExporter : BlasMod
         }
 
         // Clamp camera to bounds
-        Camera.main.GetComponent<ProCamera2D>().MoveCameraInstantlyToPosition(_cameraLocation);
+        //Camera.main.GetComponent<ProCamera2D>().MoveCameraInstantlyToPosition(_cameraLocation);
     }
 
     protected override void OnRegisterServices(ModServiceProvider provider)
