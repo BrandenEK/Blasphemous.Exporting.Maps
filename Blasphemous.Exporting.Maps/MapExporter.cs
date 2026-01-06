@@ -55,11 +55,6 @@ public class MapExporter : BlasMod
     private void PerformScreenshot()
     {
         ModLog.Info("Saving screenshot");
-
-        if (_imageCamera == null)
-            CreateCamera();
-
-        _imageCamera.transform.position = Camera.main.transform.position;
         RenderTexture.active = _renderTex;
 
         var tex = new Texture2D(WIDTH, HEIGHT, TextureFormat.ARGB32, false);
@@ -170,6 +165,10 @@ public class MapExporter : BlasMod
                 render.enabled = false;
         }
 
+        // Create image camera
+        if (_imageCamera == null)
+            CreateCamera();
+
         _cameraLocation = new Vector2(_cameraBounds.x, _cameraBounds.z);
     }
 
@@ -208,6 +207,7 @@ public class MapExporter : BlasMod
 
         // Update camera position
         Camera.main.GetComponent<ProCamera2D>().MoveCameraInstantlyToPosition(_cameraLocation);
+        _imageCamera.transform.position = Camera.main.transform.position;
 
         // Handle screenshot
         if (Input.GetKeyDown(KeyCode.Alpha7))
