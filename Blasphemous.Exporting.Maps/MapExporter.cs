@@ -1,13 +1,10 @@
 ﻿using Blasphemous.CheatConsole;
+using Blasphemous.Exporting.Maps.Handlers;
 using Blasphemous.ModdingAPI;
 using Com.LuisPedroFonseca.ProCamera2D;
 using Framework.Managers;
-using Gameplay.GameControllers.Environment;
-using Gameplay.UI.Widgets;
 using System.IO;
-using Tools.Level.Layout;
 using UnityEngine;
-using UnityEngine.UI;
 
 namespace Blasphemous.Exporting.Maps;
 
@@ -16,6 +13,7 @@ public class MapExporter : BlasMod
     internal MapExporter() : base(ModInfo.MOD_ID, ModInfo.MOD_NAME, ModInfo.MOD_AUTHOR, ModInfo.MOD_VERSION) { }
 
     public RoomStorage RoomStorage { get; private set; }
+    public StealthHandler StealthHandler { get; private set; }
 
     private bool _freezeNextRoom = false;
     private bool _isFrozen = false;
@@ -50,17 +48,6 @@ public class MapExporter : BlasMod
         Core.SpawnManager.SpawnFromDoor(room.Name, room.Door, true);
     }
 
-    private void SetTimeScale(float time)
-    {
-        Time.timeScale = time;
-
-        var obj = Object.FindObjectOfType<LevelInitializer>();
-        if (obj != null)
-        {
-            obj.TimeScaleReal = time;
-        }
-    }
-
     private void PerformScreenshot()
     {
         ModLog.Info("Saving screenshot");
@@ -84,76 +71,31 @@ public class MapExporter : BlasMod
 
     private void PerformFreeze()
     {
-        // Freeze time
-        ModLog.Info("Freezing time");
-        SetTimeScale(0);
+        ModLog.Info("Entering screenshot mode");
+
         _freezeNextRoom = false;
         _isFrozen = true;
-
-        // Clear fade
-        var fade = Object.FindObjectOfType<FadeWidget>();
-        if (fade != null)
-        {
-            ModLog.Info("Clearing fade");
-            fade.GetComponentInChildren<Image>().enabled = false;
-        }
-
-        // Remove parallax
-        foreach (var parallax in Object.FindObjectsOfType<ParallaxController>())
-        {
-            ModLog.Info("Removing parallax");
-            for (int i = 0; i < parallax.Layers.Length; i++)
-            {
-                var layer = parallax.Layers[i];
-                //ModLog.Error($"Layer {layer.layer.name}: {layer.speed}");
-
-                if (Mathf.Abs(layer.speed) <= PARALLAX_CUTOFF)
-                {
-                    parallax.Layers[i] = new ParallaxData()
-                    {
-                        layer = layer.layer,
-                        speed = 0,
-                    };
-                }
-                else
-                {
-                    layer.layer.SetActive(false);
-                }
-            }
-
-        }
-
-        // Hide ui
-        ModLog.Info("Hiding UI");
-        Core.UI.ShowGamePlayUIForDebug = false;
-
-        // Hide player
-        var player = Core.Logic.Penitent;
-        if (player != null)
-        {
-            ModLog.Info("Hiding player");
-            player.Shadow.gameObject.SetActive(false);
-
-            foreach (var render in player.GetComponentsInChildren<SpriteRenderer>())
-                render.enabled = false;
-        }
 
         // Create image camera
         if (_imageCamera == null)
             CreateCamera();
 
         _cameraLocation = new Vector2(_cameraBounds.x, _cameraBounds.z);
+
+        StealthHandler.OnFreeze();
     }
 
     private void PerformUnfreeze()
     {
-        ModLog.Info("Unfreezing time");
-        SetTimeScale(1);
+        ModLog.Info("Exiting screenshot mode");
+        
         _isFrozen = false;
 
         if (_bigTex != null)
             Object.Destroy(_bigTex);
         _bigTex = null;
+
+        StealthHandler.OnUnfreeze();
     }
 
     private void CreateCamera()
@@ -176,6 +118,7 @@ public class MapExporter : BlasMod
     {
         // Setup managers
         RoomStorage = new RoomStorage(FileHandler);
+        StealthHandler = new StealthHandler();
 
         // Create render texture
         _renderTex = new RenderTexture(WIDTH, HEIGHT, 24, RenderTextureFormat.ARGB32);
@@ -246,7 +189,6 @@ public class MapExporter : BlasMod
         provider.RegisterCommand(new MapCommand());
     }
 
-    private const float PARALLAX_CUTOFF = 0.3f;
     private const float CAMERA_SPEED = 30f;
     private const int WIDTH = 640;
     private const int HEIGHT = 360;
