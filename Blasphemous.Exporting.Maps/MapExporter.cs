@@ -248,7 +248,7 @@ public class MapExporter : BlasMod
 
     private const float PARALLAX_CUTOFF = 0.3f;
     private const float CAMERA_SPEED = 30f;
-    private const int WIDTH = 1920;
-    private const int HEIGHT = 1080;
-    private const int PIXEL_SCALING = 32 * 3;
+    private const int WIDTH = 640;
+    private const int HEIGHT = 360;
+    private const int PIXEL_SCALING = 32;
 }
