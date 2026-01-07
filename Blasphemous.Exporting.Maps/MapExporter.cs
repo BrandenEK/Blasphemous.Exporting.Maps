@@ -4,7 +4,6 @@ using Com.LuisPedroFonseca.ProCamera2D;
 using Framework.Managers;
 using Gameplay.GameControllers.Environment;
 using Gameplay.UI.Widgets;
-using System.Collections.Generic;
 using System.IO;
 using Tools.Level.Layout;
 using UnityEngine;
@@ -16,7 +15,7 @@ public class MapExporter : BlasMod
 {
     internal MapExporter() : base(ModInfo.MOD_ID, ModInfo.MOD_NAME, ModInfo.MOD_AUTHOR, ModInfo.MOD_VERSION) { }
 
-    private readonly Dictionary<string, RoomInfo> _rooms = [];
+    public RoomStorage RoomStorage { get; private set; }
 
     private bool _freezeNextRoom = false;
     private bool _isFrozen = false;
@@ -44,6 +43,30 @@ public class MapExporter : BlasMod
 
         _freezeNextRoom = true;
         _cameraBounds = bounds;
+    }
+
+    public void StartExport(RoomInfo room)
+    {
+        ModLog.Info($"Starting export for room {room.Name}");
+
+        var bounds = new Vector4(room.Xmin, room.Xmax, room.Ymin, room.Ymax);
+        float cameraHeight = Camera.main.orthographicSize * 2;
+        float cameraWidth = cameraHeight * Camera.main.aspect;
+        float imageHeight = (bounds.w - bounds.z + cameraHeight) * PIXEL_SCALING;
+        float imageWidth = (bounds.y - bounds.x + cameraWidth) * PIXEL_SCALING;
+
+        if (imageWidth < WIDTH)
+            throw new System.Exception($"Invalid width for image: {imageWidth}px");
+        if (imageHeight < HEIGHT)
+            throw new System.Exception($"Invalid height for image: {imageHeight}px");
+
+        ModLog.Warn($"Creating {(int)imageWidth}x{(int)imageHeight} texture");
+        _bigTex = new Texture2D((int)imageWidth, (int)imageHeight, TextureFormat.ARGB32, false);
+
+        _freezeNextRoom = true;
+        _cameraBounds = bounds;
+
+        Core.SpawnManager.SpawnFromDoor(room.Name, room.Door, true);
     }
 
     private void SetTimeScale(float time)
@@ -107,17 +130,8 @@ public class MapExporter : BlasMod
 
     protected override void OnInitialize()
     {
-        // Load room info
-        if (!FileHandler.LoadDataAsJson("rooms.json", out RoomInfo[] infos))
-        {
-            ModLog.Error($"Failed to load room info");
-            return;
-        }
-
-        foreach (var info in infos)
-            _rooms.Add(info.Name, info);
-
-        ModLog.Info($"Loaded {_rooms.count} rooms");
+        // Setup managers
+        RoomStorage = new RoomStorage(FileHandler);
 
         // Create render texture
         _renderTex = new RenderTexture(WIDTH, HEIGHT, 24, RenderTextureFormat.ARGB32);

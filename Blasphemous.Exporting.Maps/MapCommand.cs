@@ -15,6 +15,7 @@ public class MapCommand : ModCommand
     {
         return new Dictionary<string, Action<string[]>>()
         {
+            { "load", Load },
             { "setup", Setup },
         };
     }
@@ -36,5 +37,21 @@ public class MapCommand : ModCommand
             return;
 
         Main.MapExporter.SetupNextRoom(new Vector4(xmin, xmax, ymin, ymax));
+    }
+
+    private void Load(string[] parameters)
+    {
+        if (!ValidateParameterList(parameters, 1))
+            return;
+
+        string text = parameters[0].ToUpper();
+
+        if (!Main.MapExporter.RoomStorage.TryGetRoom(text, out RoomInfo room))
+        {
+            Write($"Room {text} does not have data");
+            return;
+        }
+
+        Main.MapExporter.StartExport(room);
     }
 }
