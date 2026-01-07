@@ -20,7 +20,7 @@ public class StealthHandler
     {
         // Freeze time
         ModLog.Info("Freezing time");
-        SetTimeScale(0);
+        Core.Logic.PauseGame();
 
         // Remove fade
         var fade = Object.FindObjectOfType<FadeWidget>();
@@ -75,7 +75,7 @@ public class StealthHandler
     {
         // Unfreeze time
         ModLog.Info("Unfreezing time");
-        SetTimeScale(1);
+        Core.Logic.ResumeGame();
 
         // Recover fade
         var fade = Object.FindObjectOfType<FadeWidget>();
@@ -113,17 +113,6 @@ public class StealthHandler
                     render.enabled = true;
             }
             _hiddenPlayerRenderers.Clear();
-        }
-    }
-
-    private void SetTimeScale(float time)
-    {
-        Time.timeScale = time;
-
-        var obj = Object.FindObjectOfType<LevelInitializer>();
-        if (obj != null)
-        {
-            obj.TimeScaleReal = time;
         }
     }
 
