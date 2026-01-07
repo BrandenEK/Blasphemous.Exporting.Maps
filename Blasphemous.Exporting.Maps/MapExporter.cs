@@ -82,53 +82,8 @@ public class MapExporter : BlasMod
         Object.Destroy(tex);
     }
 
-    private void PerformUnfreeze()
+    private void PerformFreeze()
     {
-        ModLog.Info("Unfreezing time");
-        SetTimeScale(1);
-        _isFrozen = false;
-
-        if (_bigTex != null)
-            Object.Destroy(_bigTex);
-        _bigTex = null;
-    }
-
-    private void CreateCamera()
-    {
-        ModLog.Info("Creating image camera");
-
-        var obj = new GameObject("Image Camera");
-        obj.transform.SetParent(Camera.main.transform.parent);
-
-        var camera = obj.AddComponent<Camera>();
-        camera.orthographic = true;
-        camera.orthographicSize = Camera.main.orthographicSize;
-        camera.aspect = Camera.main.aspect;
-        camera.targetTexture = _renderTex;
-
-        _imageCamera = camera;
-    }
-
-    protected override void OnInitialize()
-    {
-        // Setup managers
-        RoomStorage = new RoomStorage(FileHandler);
-
-        // Create render texture
-        _renderTex = new RenderTexture(WIDTH, HEIGHT, 24, RenderTextureFormat.ARGB32);
-        _renderTex.Create();
-    }
-
-    protected override void OnDispose()
-    {
-        RoomStorage.SaveRooms();
-    }
-
-    protected override void OnLevelLoaded(string oldLevel, string newLevel)
-    {
-        if (!_freezeNextRoom)
-            return;
-
         // Freeze time
         ModLog.Info("Freezing time");
         SetTimeScale(0);
@@ -188,6 +143,56 @@ public class MapExporter : BlasMod
             CreateCamera();
 
         _cameraLocation = new Vector2(_cameraBounds.x, _cameraBounds.z);
+    }
+
+    private void PerformUnfreeze()
+    {
+        ModLog.Info("Unfreezing time");
+        SetTimeScale(1);
+        _isFrozen = false;
+
+        if (_bigTex != null)
+            Object.Destroy(_bigTex);
+        _bigTex = null;
+    }
+
+    private void CreateCamera()
+    {
+        ModLog.Info("Creating image camera");
+
+        var obj = new GameObject("Image Camera");
+        obj.transform.SetParent(Camera.main.transform.parent);
+
+        var camera = obj.AddComponent<Camera>();
+        camera.orthographic = true;
+        camera.orthographicSize = Camera.main.orthographicSize;
+        camera.aspect = Camera.main.aspect;
+        camera.targetTexture = _renderTex;
+
+        _imageCamera = camera;
+    }
+
+    protected override void OnInitialize()
+    {
+        // Setup managers
+        RoomStorage = new RoomStorage(FileHandler);
+
+        // Create render texture
+        _renderTex = new RenderTexture(WIDTH, HEIGHT, 24, RenderTextureFormat.ARGB32);
+        _renderTex.Create();
+    }
+
+    protected override void OnDispose()
+    {
+        RoomStorage.SaveRooms();
+    }
+
+    public void OnLoadRoom()
+    {
+        if (!_freezeNextRoom)
+            return;
+
+        PerformFreeze();
     }
 
     protected override void OnUpdate()
