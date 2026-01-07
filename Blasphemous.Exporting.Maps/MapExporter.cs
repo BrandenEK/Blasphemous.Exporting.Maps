@@ -15,14 +15,12 @@ public class MapExporter : BlasMod
     public CameraHandler CameraHandler { get; private set; }
     public RoomStorage RoomStorage { get; private set; }
     public StealthHandler StealthHandler { get; private set; }
+    public TextureHandler TextureHandler { get; private set; }
 
     private bool _freezeNextRoom = false;
     private bool _isFrozen = false;
     private Vector2 _cameraLocation;
     private Vector4 _cameraBounds;
-
-    private Texture2D _bigTex;
-    private RenderTexture _renderTex;
 
     public void StartExport(RoomInfo room)
     {
@@ -40,7 +38,7 @@ public class MapExporter : BlasMod
             throw new System.Exception($"Invalid height for image: {imageHeight}px");
 
         ModLog.Warn($"Creating {(int)imageWidth}x{(int)imageHeight} texture");
-        _bigTex = new Texture2D((int)imageWidth, (int)imageHeight, TextureFormat.ARGB32, false);
+        TextureHandler.CreateNewTexture((int)imageWidth, (int)imageHeight);
 
         _freezeNextRoom = true;
         _cameraBounds = bounds;
@@ -51,22 +49,23 @@ public class MapExporter : BlasMod
     private void PerformScreenshot()
     {
         ModLog.Info("Saving screenshot");
-        RenderTexture.active = _renderTex;
+        TextureHandler.ActivateRenderTexture(true);
 
-        var tex = new Texture2D(WIDTH, HEIGHT, TextureFormat.ARGB32, false);
-        tex.ReadPixels(new Rect(0, 0, WIDTH, HEIGHT), 0, 0);
-        tex.Apply();
+        Texture2D fullTexture = TextureHandler.ImageTexture;
+        Texture2D partTexture = new Texture2D(WIDTH, HEIGHT, TextureFormat.ARGB32, false);
+        partTexture.ReadPixels(new Rect(0, 0, WIDTH, HEIGHT), 0, 0);
+        partTexture.Apply();
 
         var location = new Vector2((_cameraLocation.x - _cameraBounds.x) * PIXEL_SCALING, (_cameraLocation.y - _cameraBounds.z) * PIXEL_SCALING);
-        Graphics.CopyTexture(tex, 0, 0, 0, 0, WIDTH, HEIGHT, _bigTex, 0, 0, (int)location.x, (int)location.y);
+        Graphics.CopyTexture(partTexture, 0, 0, 0, 0, WIDTH, HEIGHT, fullTexture, 0, 0, (int)location.x, (int)location.y);
 
-        byte[] bytes = _bigTex.EncodeToPNG();
+        byte[] bytes = fullTexture.EncodeToPNG();
         string path = Path.Combine(FileHandler.ContentFolder, $"{Core.LevelManager.currentLevel.LevelName}.png");
 
         File.WriteAllBytes(path, bytes);
 
-        RenderTexture.active = null;
-        Object.Destroy(tex);
+        TextureHandler.ActivateRenderTexture(false);
+        Object.Destroy(partTexture);
     }
 
     private void PerformFreeze()
@@ -88,23 +87,16 @@ public class MapExporter : BlasMod
         
         _isFrozen = false;
 
-        if (_bigTex != null)
-            Object.Destroy(_bigTex);
-        _bigTex = null;
-
         StealthHandler.OnUnfreeze();
+        TextureHandler.OnUnfreeze();
     }
 
     protected override void OnInitialize()
     {
-        // Create render texture
-        _renderTex = new RenderTexture(WIDTH, HEIGHT, 24, RenderTextureFormat.ARGB32);
-        _renderTex.Create();
-
-        // Setup managers
-        CameraHandler = new CameraHandler(_renderTex);
+        CameraHandler = new CameraHandler();
         RoomStorage = new RoomStorage(FileHandler);
         StealthHandler = new StealthHandler();
+        TextureHandler = new TextureHandler();
     }
 
     protected override void OnDispose()
@@ -163,8 +155,8 @@ public class MapExporter : BlasMod
         provider.RegisterCommand(new MapCommand());
     }
 
-    private const float CAMERA_SPEED = 30f;
-    private const int WIDTH = 640;
-    private const int HEIGHT = 360;
+    internal const int WIDTH = 640;
+    internal const int HEIGHT = 360;
     private const int PIXEL_SCALING = 32;
+    private const float CAMERA_SPEED = 30f;
 }
