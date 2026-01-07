@@ -12,6 +12,7 @@ public class MapExporter : BlasMod
 {
     internal MapExporter() : base(ModInfo.MOD_ID, ModInfo.MOD_NAME, ModInfo.MOD_AUTHOR, ModInfo.MOD_VERSION) { }
 
+    public CameraHandler CameraHandler { get; private set; }
     public RoomStorage RoomStorage { get; private set; }
     public StealthHandler StealthHandler { get; private set; }
 
@@ -20,7 +21,6 @@ public class MapExporter : BlasMod
     private Vector2 _cameraLocation;
     private Vector4 _cameraBounds;
 
-    private Camera _imageCamera;
     private Texture2D _bigTex;
     private RenderTexture _renderTex;
 
@@ -76,12 +76,9 @@ public class MapExporter : BlasMod
         _freezeNextRoom = false;
         _isFrozen = true;
 
-        // Create image camera
-        if (_imageCamera == null)
-            CreateCamera();
-
         _cameraLocation = new Vector2(_cameraBounds.x, _cameraBounds.z);
 
+        CameraHandler.OnFreeze();
         StealthHandler.OnFreeze();
     }
 
@@ -98,31 +95,16 @@ public class MapExporter : BlasMod
         StealthHandler.OnUnfreeze();
     }
 
-    private void CreateCamera()
-    {
-        ModLog.Info("Creating image camera");
-
-        var obj = new GameObject("Image Camera");
-        obj.transform.SetParent(Camera.main.transform.parent);
-
-        var camera = obj.AddComponent<Camera>();
-        camera.orthographic = true;
-        camera.orthographicSize = Camera.main.orthographicSize;
-        camera.aspect = Camera.main.aspect;
-        camera.targetTexture = _renderTex;
-
-        _imageCamera = camera;
-    }
-
     protected override void OnInitialize()
     {
-        // Setup managers
-        RoomStorage = new RoomStorage(FileHandler);
-        StealthHandler = new StealthHandler();
-
         // Create render texture
         _renderTex = new RenderTexture(WIDTH, HEIGHT, 24, RenderTextureFormat.ARGB32);
         _renderTex.Create();
+
+        // Setup managers
+        CameraHandler = new CameraHandler(_renderTex);
+        RoomStorage = new RoomStorage(FileHandler);
+        StealthHandler = new StealthHandler();
     }
 
     protected override void OnDispose()
@@ -136,14 +118,6 @@ public class MapExporter : BlasMod
             return;
 
         PerformFreeze();
-    }
-
-    protected override void OnUpdate()
-    {
-        if (Input.GetKeyDown(KeyCode.Alpha8))
-        {
-            ModLog.Warn($"Camera: {Camera.main.transform.position}");
-        }
     }
 
     protected override void OnLateUpdate()
@@ -173,7 +147,7 @@ public class MapExporter : BlasMod
 
         // Update camera position
         Camera.main.GetComponent<ProCamera2D>().MoveCameraInstantlyToPosition(_cameraLocation);
-        _imageCamera.transform.position = Camera.main.transform.position;
+        CameraHandler.MoveCamera(Camera.main.transform.position);
 
         // Handle screenshot
         if (Input.GetKeyDown(KeyCode.Alpha7))
