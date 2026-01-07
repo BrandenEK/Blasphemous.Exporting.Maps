@@ -1,6 +1,9 @@
 ﻿using Blasphemous.ModdingAPI;
 using Blasphemous.ModdingAPI.Files;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Serialization;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using UnityEngine;
 
@@ -58,7 +61,7 @@ public class RoomStorage
 
         info.Door = door;
 
-        // Save
+        SaveRooms();
     }
 
     public void UpdateMinBounds(string room, Vector2 position)
@@ -68,16 +71,33 @@ public class RoomStorage
         info.Xmin = position.x;
         info.Ymin = position.y;
 
-        // Save
+        SaveRooms();
     }
 
     public void UpdateMaxBounds(string room, Vector2 position)
     {
         RoomInfo info = CreateIfDoesntExist(room);
 
-        info.Ymin = position.x;
+        info.Xmax = position.x;
         info.Ymax = position.y;
 
-        // Save
+        SaveRooms();
+    }
+
+    public void SaveRooms()
+    {
+        string path = Path.Combine(Main.MapExporter.FileHandler.ContentFolder, "rooms.json");
+        var settings = new JsonSerializerSettings()
+        {
+            Formatting = Formatting.Indented,
+            ContractResolver = new DefaultContractResolver()
+            {
+                NamingStrategy = new CamelCaseNamingStrategy(false, true)
+            },
+        };
+        string json = JsonConvert.SerializeObject(_rooms.Values.OrderBy(x => x.Name), settings);
+
+        ModLog.Info("Saving room info to content folder");
+        File.WriteAllText(path, json);
     }
 }

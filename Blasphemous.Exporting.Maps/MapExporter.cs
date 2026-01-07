@@ -138,6 +138,11 @@ public class MapExporter : BlasMod
         _renderTex.Create();
     }
 
+    protected override void OnDispose()
+    {
+        RoomStorage.SaveRooms();
+    }
+
     protected override void OnLevelLoaded(string oldLevel, string newLevel)
     {
         if (!_freezeNextRoom)
