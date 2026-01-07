@@ -1,13 +1,10 @@
 ﻿using Blasphemous.CheatConsole;
+using Blasphemous.Exporting.Maps.Handlers;
 using Blasphemous.ModdingAPI;
 using Com.LuisPedroFonseca.ProCamera2D;
 using Framework.Managers;
-using Gameplay.GameControllers.Environment;
-using Gameplay.UI.Widgets;
 using System.IO;
-using Tools.Level.Layout;
 using UnityEngine;
-using UnityEngine.UI;
 
 namespace Blasphemous.Exporting.Maps;
 
@@ -15,16 +12,15 @@ public class MapExporter : BlasMod
 {
     internal MapExporter() : base(ModInfo.MOD_ID, ModInfo.MOD_NAME, ModInfo.MOD_AUTHOR, ModInfo.MOD_VERSION) { }
 
+    public CameraHandler CameraHandler { get; private set; }
     public RoomStorage RoomStorage { get; private set; }
+    public StealthHandler StealthHandler { get; private set; }
+    public TextureHandler TextureHandler { get; private set; }
 
     private bool _freezeNextRoom = false;
     private bool _isFrozen = false;
     private Vector2 _cameraLocation;
     private Vector4 _cameraBounds;
-
-    private Camera _imageCamera;
-    private Texture2D _bigTex;
-    private RenderTexture _renderTex;
 
     public void StartExport(RoomInfo room)
     {
@@ -42,7 +38,7 @@ public class MapExporter : BlasMod
             throw new System.Exception($"Invalid height for image: {imageHeight}px");
 
         ModLog.Warn($"Creating {(int)imageWidth}x{(int)imageHeight} texture");
-        _bigTex = new Texture2D((int)imageWidth, (int)imageHeight, TextureFormat.ARGB32, false);
+        TextureHandler.CreateNewTexture((int)imageWidth, (int)imageHeight);
 
         _freezeNextRoom = true;
         _cameraBounds = bounds;
@@ -50,136 +46,59 @@ public class MapExporter : BlasMod
         Core.SpawnManager.SpawnFromDoor(room.Name, room.Door, true);
     }
 
-    private void SetTimeScale(float time)
-    {
-        Time.timeScale = time;
-
-        var obj = Object.FindObjectOfType<LevelInitializer>();
-        if (obj != null)
-        {
-            obj.TimeScaleReal = time;
-        }
-    }
-
     private void PerformScreenshot()
     {
         ModLog.Info("Saving screenshot");
-        RenderTexture.active = _renderTex;
+        TextureHandler.ActivateRenderTexture(true);
 
-        var tex = new Texture2D(WIDTH, HEIGHT, TextureFormat.ARGB32, false);
-        tex.ReadPixels(new Rect(0, 0, WIDTH, HEIGHT), 0, 0);
-        tex.Apply();
+        Texture2D fullTexture = TextureHandler.ImageTexture;
+        Texture2D partTexture = new Texture2D(WIDTH, HEIGHT, TextureFormat.ARGB32, false);
+        partTexture.ReadPixels(new Rect(0, 0, WIDTH, HEIGHT), 0, 0);
+        partTexture.Apply();
 
         var location = new Vector2((_cameraLocation.x - _cameraBounds.x) * PIXEL_SCALING, (_cameraLocation.y - _cameraBounds.z) * PIXEL_SCALING);
-        Graphics.CopyTexture(tex, 0, 0, 0, 0, WIDTH, HEIGHT, _bigTex, 0, 0, (int)location.x, (int)location.y);
+        Graphics.CopyTexture(partTexture, 0, 0, 0, 0, WIDTH, HEIGHT, fullTexture, 0, 0, (int)location.x, (int)location.y);
 
-        byte[] bytes = _bigTex.EncodeToPNG();
+        byte[] bytes = fullTexture.EncodeToPNG();
         string path = Path.Combine(FileHandler.ContentFolder, $"{Core.LevelManager.currentLevel.LevelName}.png");
 
         File.WriteAllBytes(path, bytes);
 
-        RenderTexture.active = null;
-        Object.Destroy(tex);
+        TextureHandler.ActivateRenderTexture(false);
+        Object.Destroy(partTexture);
     }
 
     private void PerformFreeze()
     {
-        // Freeze time
-        ModLog.Info("Freezing time");
-        SetTimeScale(0);
+        ModLog.Info("Entering screenshot mode");
+        Core.Input.SetBlocker("MAPEXPORT", true);
+
         _freezeNextRoom = false;
         _isFrozen = true;
 
-        // Clear fade
-        var fade = Object.FindObjectOfType<FadeWidget>();
-        if (fade != null)
-        {
-            ModLog.Info("Clearing fade");
-            fade.GetComponentInChildren<Image>().enabled = false;
-        }
-
-        // Remove parallax
-        foreach (var parallax in Object.FindObjectsOfType<ParallaxController>())
-        {
-            ModLog.Info("Removing parallax");
-            for (int i = 0; i < parallax.Layers.Length; i++)
-            {
-                var layer = parallax.Layers[i];
-                //ModLog.Error($"Layer {layer.layer.name}: {layer.speed}");
-
-                if (Mathf.Abs(layer.speed) <= PARALLAX_CUTOFF)
-                {
-                    parallax.Layers[i] = new ParallaxData()
-                    {
-                        layer = layer.layer,
-                        speed = 0,
-                    };
-                }
-                else
-                {
-                    layer.layer.SetActive(false);
-                }
-            }
-
-        }
-
-        // Hide ui
-        ModLog.Info("Hiding UI");
-        Core.UI.ShowGamePlayUIForDebug = false;
-
-        // Hide player
-        var player = Core.Logic.Penitent;
-        if (player != null)
-        {
-            ModLog.Info("Hiding player");
-            player.Shadow.gameObject.SetActive(false);
-
-            foreach (var render in player.GetComponentsInChildren<SpriteRenderer>())
-                render.enabled = false;
-        }
-
-        // Create image camera
-        if (_imageCamera == null)
-            CreateCamera();
-
         _cameraLocation = new Vector2(_cameraBounds.x, _cameraBounds.z);
+
+        CameraHandler.OnFreeze();
+        StealthHandler.OnFreeze();
     }
 
     private void PerformUnfreeze()
     {
-        ModLog.Info("Unfreezing time");
-        SetTimeScale(1);
+        ModLog.Info("Exiting screenshot mode");
+        Core.Input.SetBlocker("MAPEXPORT", false);
+
         _isFrozen = false;
 
-        if (_bigTex != null)
-            Object.Destroy(_bigTex);
-        _bigTex = null;
-    }
-
-    private void CreateCamera()
-    {
-        ModLog.Info("Creating image camera");
-
-        var obj = new GameObject("Image Camera");
-        obj.transform.SetParent(Camera.main.transform.parent);
-
-        var camera = obj.AddComponent<Camera>();
-        camera.orthographic = true;
-        camera.orthographicSize = Camera.main.orthographicSize;
-        camera.aspect = Camera.main.aspect;
-        camera.targetTexture = _renderTex;
-
-        _imageCamera = camera;
+        StealthHandler.OnUnfreeze();
+        TextureHandler.OnUnfreeze();
     }
 
     protected override void OnInitialize()
     {
-        // Setup managers
+        CameraHandler = new CameraHandler();
         RoomStorage = new RoomStorage(FileHandler);
-
-        // Create render texture
-        _renderTex = new RenderTexture(WIDTH, HEIGHT, 24, RenderTextureFormat.ARGB32);
-        _renderTex.Create();
+        StealthHandler = new StealthHandler();
+        TextureHandler = new TextureHandler();
     }
 
     protected override void OnDispose()
@@ -193,14 +112,6 @@ public class MapExporter : BlasMod
             return;
 
         PerformFreeze();
-    }
-
-    protected override void OnUpdate()
-    {
-        if (Input.GetKeyDown(KeyCode.Alpha8))
-        {
-            ModLog.Warn($"Camera: {Camera.main.transform.position}");
-        }
     }
 
     protected override void OnLateUpdate()
@@ -230,7 +141,7 @@ public class MapExporter : BlasMod
 
         // Update camera position
         Camera.main.GetComponent<ProCamera2D>().MoveCameraInstantlyToPosition(_cameraLocation);
-        _imageCamera.transform.position = Camera.main.transform.position;
+        CameraHandler.MoveCamera(Camera.main.transform.position);
 
         // Handle screenshot
         if (Input.GetKeyDown(KeyCode.Alpha7))
@@ -246,9 +157,8 @@ public class MapExporter : BlasMod
         provider.RegisterCommand(new MapCommand());
     }
 
-    private const float PARALLAX_CUTOFF = 0.3f;
-    private const float CAMERA_SPEED = 30f;
-    private const int WIDTH = 640;
-    private const int HEIGHT = 360;
+    internal const int WIDTH = 640;
+    internal const int HEIGHT = 360;
     private const int PIXEL_SCALING = 32;
+    private const float CAMERA_SPEED = 30f;
 }
