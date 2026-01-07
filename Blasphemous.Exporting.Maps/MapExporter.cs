@@ -105,7 +105,7 @@ public class MapExporter : BlasMod
             for (int i = 0; i < parallax.Layers.Length; i++)
             {
                 var layer = parallax.Layers[i];
-                ModLog.Error($"Layer {layer.layer.name}: {layer.speed}");
+                //ModLog.Error($"Layer {layer.layer.name}: {layer.speed}");
 
                 if (Mathf.Abs(layer.speed) <= PARALLAX_CUTOFF)
                 {
