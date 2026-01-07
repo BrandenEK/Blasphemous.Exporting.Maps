@@ -15,6 +15,8 @@ public class MapExporter : BlasMod
 {
     internal MapExporter() : base(ModInfo.MOD_ID, ModInfo.MOD_NAME, ModInfo.MOD_AUTHOR, ModInfo.MOD_VERSION) { }
 
+    public RoomStorage RoomStorage { get; private set; }
+
     private bool _freezeNextRoom = false;
     private bool _isFrozen = false;
     private Vector2 _cameraLocation;
@@ -24,8 +26,11 @@ public class MapExporter : BlasMod
     private Texture2D _bigTex;
     private RenderTexture _renderTex;
 
-    public void SetupNextRoom(Vector4 bounds)
+    public void StartExport(RoomInfo room)
     {
+        ModLog.Info($"Starting export for room {room.Name}");
+
+        var bounds = new Vector4(room.Xmin, room.Xmax, room.Ymin, room.Ymax);
         float cameraHeight = Camera.main.orthographicSize * 2;
         float cameraWidth = cameraHeight * Camera.main.aspect;
         float imageHeight = (bounds.w - bounds.z + cameraHeight) * PIXEL_SCALING;
@@ -41,6 +46,8 @@ public class MapExporter : BlasMod
 
         _freezeNextRoom = true;
         _cameraBounds = bounds;
+
+        Core.SpawnManager.SpawnFromDoor(room.Name, room.Door, true);
     }
 
     private void SetTimeScale(float time)
@@ -104,8 +111,17 @@ public class MapExporter : BlasMod
 
     protected override void OnInitialize()
     {
+        // Setup managers
+        RoomStorage = new RoomStorage(FileHandler);
+
+        // Create render texture
         _renderTex = new RenderTexture(WIDTH, HEIGHT, 24, RenderTextureFormat.ARGB32);
         _renderTex.Create();
+    }
+
+    protected override void OnDispose()
+    {
+        RoomStorage.SaveRooms();
     }
 
     protected override void OnLevelLoaded(string oldLevel, string newLevel)
