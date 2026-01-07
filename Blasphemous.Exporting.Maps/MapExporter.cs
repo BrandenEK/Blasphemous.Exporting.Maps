@@ -71,6 +71,7 @@ public class MapExporter : BlasMod
     private void PerformFreeze()
     {
         ModLog.Info("Entering screenshot mode");
+        Core.Input.SetBlocker("MAPEXPORT", true);
 
         _freezeNextRoom = false;
         _isFrozen = true;
@@ -84,7 +85,8 @@ public class MapExporter : BlasMod
     private void PerformUnfreeze()
     {
         ModLog.Info("Exiting screenshot mode");
-        
+        Core.Input.SetBlocker("MAPEXPORT", false);
+
         _isFrozen = false;
 
         StealthHandler.OnUnfreeze();
