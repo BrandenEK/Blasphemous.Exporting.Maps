@@ -99,6 +99,12 @@ public class MapExporter : BlasMod
         RoomStorage = new RoomStorage(FileHandler);
         StealthHandler = new StealthHandler();
         TextureHandler = new TextureHandler();
+
+        InputHandler.RegisterDefaultKeybindings(new System.Collections.Generic.Dictionary<string, KeyCode>()
+        {
+            { "TakeScreenshot", KeyCode.Minus },
+            { "Exit", KeyCode.Equals },
+        });
     }
 
     protected override void OnDispose()
@@ -144,11 +150,11 @@ public class MapExporter : BlasMod
         CameraHandler.MoveCamera(Camera.main.transform.position);
 
         // Handle screenshot
-        if (Input.GetKeyDown(KeyCode.Alpha7))
+        if (InputHandler.GetKeyDown("TakeScreenshot"))
             PerformScreenshot();
 
         // Handle unfreeze
-        if (Input.GetKeyDown(KeyCode.Alpha0))
+        if (InputHandler.GetKeyDown("Exit"))
             PerformUnfreeze();
     }
 
