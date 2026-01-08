@@ -65,20 +65,24 @@ public class RoomStorage
         SaveRooms();
     }
 
-    public void UpdateMinBounds(string room, Vector2 position)
+    public void UpdateMinBounds(string room, Vector2 position, bool setX, bool setY)
     {
         RoomInfo info = CreateIfDoesntExist(room);
-        info.Xmin = position.x;
-        info.Ymin = position.y;
+        if (setX)
+            info.Xmin = position.x;
+        if (setY)
+            info.Ymin = position.y;
 
         SaveRooms();
     }
 
-    public void UpdateMaxBounds(string room, Vector2 position)
+    public void UpdateMaxBounds(string room, Vector2 position, bool setX, bool setY)
     {
         RoomInfo info = CreateIfDoesntExist(room);
-        info.Xmax = position.x;
-        info.Ymax = position.y;
+        if (setX)
+            info.Xmax = position.x;
+        if (setY)
+            info.Ymax = position.y;
 
         SaveRooms();
     }

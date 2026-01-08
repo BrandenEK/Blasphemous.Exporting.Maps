@@ -80,25 +80,35 @@ public class MapCommand : ModCommand
 
     private void Min(string[] parameters)
     {
-        if (!ValidateParameterList(parameters, 0))
+        if (parameters.Length != 0 && parameters.Length != 1)
+        {
+            Write("There is only one optional parameter");
             return;
+        }
 
         string room = Core.LevelManager.currentLevel.LevelName;
         Vector2 position = Camera.main.transform.position;
+        bool setX = parameters.Length == 0 || parameters[0] == "x";
+        bool setY = parameters.Length == 0 || parameters[0] == "y";
 
         Write($"Storing min position for {room} as {position}");
-        Main.MapExporter.RoomStorage.UpdateMinBounds(room, position);
+        Main.MapExporter.RoomStorage.UpdateMinBounds(room, position, setX, setY);
     }
 
     private void Max(string[] parameters)
     {
-        if (!ValidateParameterList(parameters, 0))
+        if (parameters.Length != 0 && parameters.Length != 1)
+        {
+            Write("There is only one optional parameter");
             return;
+        }
 
         string room = Core.LevelManager.currentLevel.LevelName;
         Vector2 position = Camera.main.transform.position;
+        bool setX = parameters.Length == 0 || parameters[0] == "x";
+        bool setY = parameters.Length == 0 || parameters[0] == "y";
 
         Write($"Storing max position for {room} as {position}");
-        Main.MapExporter.RoomStorage.UpdateMaxBounds(room, position);
+        Main.MapExporter.RoomStorage.UpdateMaxBounds(room, position, setX, setY);
     }
 }
