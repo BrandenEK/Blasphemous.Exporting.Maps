@@ -60,7 +60,7 @@ public class MapExporter : BlasMod
         Graphics.CopyTexture(partTexture, 0, 0, 0, 0, WIDTH, HEIGHT, fullTexture, 0, 0, (int)location.x, (int)location.y);
 
         byte[] bytes = fullTexture.EncodeToPNG();
-        string path = Path.Combine(FileHandler.ContentFolder, $"{Core.LevelManager.currentLevel.LevelName}.png");
+        string path = Path.Combine(FileHandler.ContentFolder, $"{Core.LevelManager.currentLevel.LevelName}-v{EXPORT_VERSION}.png");
 
         File.WriteAllBytes(path, bytes);
 
@@ -167,4 +167,5 @@ public class MapExporter : BlasMod
     internal const int HEIGHT = 360;
     private const int PIXEL_SCALING = 32;
     private const float CAMERA_SPEED = 30f;
+    private const int EXPORT_VERSION = 1;
 }

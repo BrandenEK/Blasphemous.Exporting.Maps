@@ -9,7 +9,7 @@ namespace Blasphemous.Exporting.Maps;
 
 public class MapCommand : ModCommand
 {
-    protected override string CommandName { get; } = "mapexport";
+    protected override string CommandName { get; } = "me";
 
     protected override bool AllowUppercase { get; } = false;
 
@@ -30,6 +30,12 @@ public class MapCommand : ModCommand
             return;
 
         string text = parameters[0].ToUpper();
+
+        if (Core.LevelManager.currentLevel.LevelName == text)
+        {
+            Write($"Can not export the currently loaded room");
+            return;
+        }
 
         if (!Main.MapExporter.RoomStorage.TryGetRoom(text, out RoomInfo room))
         {
