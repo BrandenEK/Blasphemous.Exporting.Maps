@@ -101,7 +101,8 @@ public class MapExporter : BlasMod
     {
         if (_useDelay)
         {
-            for (int i = 0; i < 12; i++)
+            int frames = Application.targetFrameRate / DELAY_DIVISOR;
+            for (int i = 0; i < frames; i++)
                 yield return null;
         }
         
@@ -182,5 +183,6 @@ public class MapExporter : BlasMod
     internal const int HEIGHT = 360;
     private const int PIXEL_SCALING = 32;
     private const float CAMERA_SPEED = 30f;
+    private const int DELAY_DIVISOR = 5;
     private const int EXPORT_VERSION = 2;
 }
