@@ -19,6 +19,7 @@ public class MapCommand : ModCommand
         {
             { "load", Load },
             { "door", Door },
+            { "delay", Delay },
             { "min", Min },
             { "max", Max },
         };
@@ -63,7 +64,18 @@ public class MapCommand : ModCommand
 
         Write($"Storing door for {room} as {door.identificativeName}");
         Main.MapExporter.RoomStorage.UpdateDoor(room, door.identificativeName);
+    }
 
+    private void Delay(string[] parameters)
+    {
+        if (!ValidateParameterList(parameters, 1))
+            return;
+
+        string room = Core.LevelManager.currentLevel.LevelName;
+        bool delay = parameters[0] == "on";
+
+        Write($"Storing delay state for {room} as {delay}");
+        Main.MapExporter.RoomStorage.UpdateDelay(room, delay);
     }
 
     private void Min(string[] parameters)

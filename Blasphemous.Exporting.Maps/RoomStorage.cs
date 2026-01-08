@@ -52,8 +52,15 @@ public class RoomStorage
     public void UpdateDoor(string room, string door)
     {
         RoomInfo info = CreateIfDoesntExist(room);
-
         info.Door = door;
+
+        SaveRooms();
+    }
+
+    public void UpdateDelay(string room, bool delay)
+    {
+        RoomInfo info = CreateIfDoesntExist(room);
+        info.Delay = delay;
 
         SaveRooms();
     }
@@ -61,7 +68,6 @@ public class RoomStorage
     public void UpdateMinBounds(string room, Vector2 position)
     {
         RoomInfo info = CreateIfDoesntExist(room);
-
         info.Xmin = position.x;
         info.Ymin = position.y;
 
@@ -71,7 +77,6 @@ public class RoomStorage
     public void UpdateMaxBounds(string room, Vector2 position)
     {
         RoomInfo info = CreateIfDoesntExist(room);
-
         info.Xmax = position.x;
         info.Ymax = position.y;
 

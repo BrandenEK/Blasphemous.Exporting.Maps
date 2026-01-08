@@ -3,6 +3,8 @@ using Blasphemous.Exporting.Maps.Handlers;
 using Blasphemous.ModdingAPI;
 using Com.LuisPedroFonseca.ProCamera2D;
 using Framework.Managers;
+using Gameplay.UI;
+using System.Collections;
 using System.IO;
 using UnityEngine;
 
@@ -19,6 +21,7 @@ public class MapExporter : BlasMod
 
     private bool _freezeNextRoom = false;
     private bool _isFrozen = false;
+    private bool _useDelay;
     private Vector2 _cameraLocation;
     private Vector4 _cameraBounds;
 
@@ -42,6 +45,7 @@ public class MapExporter : BlasMod
 
         _freezeNextRoom = true;
         _cameraBounds = bounds;
+        _useDelay = room.Delay;
 
         Core.SpawnManager.SpawnFromDoor(room.Name, room.Door, true);
     }
@@ -93,6 +97,18 @@ public class MapExporter : BlasMod
         TextureHandler.OnUnfreeze();
     }
 
+    private IEnumerator WaitForScreenshot()
+    {
+        if (_useDelay)
+        {
+            int frames = Application.targetFrameRate / DELAY_DIVISOR;
+            for (int i = 0; i < frames; i++)
+                yield return null;
+        }
+        
+        PerformFreeze();
+    }
+
     protected override void OnInitialize()
     {
         CameraHandler = new CameraHandler();
@@ -107,17 +123,17 @@ public class MapExporter : BlasMod
         });
     }
 
-    protected override void OnDispose()
-    {
-        RoomStorage.SaveRooms();
-    }
-
-    public void OnLoadRoom()
+    protected override void OnLevelLoaded(string oldLevel, string newLevel)
     {
         if (!_freezeNextRoom)
             return;
 
-        PerformFreeze();
+        UIController.instance.StartCoroutine(WaitForScreenshot());
+    }
+
+    protected override void OnDispose()
+    {
+        RoomStorage.SaveRooms();
     }
 
     protected override void OnLateUpdate()
@@ -167,5 +183,6 @@ public class MapExporter : BlasMod
     internal const int HEIGHT = 360;
     private const int PIXEL_SCALING = 32;
     private const float CAMERA_SPEED = 30f;
-    private const int EXPORT_VERSION = 1;
+    private const int DELAY_DIVISOR = 5;
+    private const int EXPORT_VERSION = 2;
 }
