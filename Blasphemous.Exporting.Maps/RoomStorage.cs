@@ -15,13 +15,7 @@ public class RoomStorage
 
     public RoomStorage(FileHandler file)
     {
-        if (!file.LoadDataAsJson("rooms.json", out RoomInfo[] infos))
-        {
-            ModLog.Error($"Failed to load room info");
-            return;
-        }
-
-        _rooms = infos.ToDictionary(x => x.Name, x => x);
+        _rooms = LoadFromContent(file);
         ModLog.Info($"Loaded {_rooms.Count} rooms");
     }
 
@@ -99,5 +93,33 @@ public class RoomStorage
 
         ModLog.Info("Saving room info to content folder");
         File.WriteAllText(path, json);
+    }
+
+    private Dictionary<string, RoomInfo> LoadFromData(FileHandler file)
+    {
+        if (!file.LoadDataAsJson("rooms.json", out RoomInfo[] infos))
+        {
+            ModLog.Error($"Failed to load room info");
+            return [];
+        }
+
+        return infos.ToDictionary(x => x.Name, x => x);
+    }
+
+    private Dictionary<string, RoomInfo> LoadFromContent(FileHandler file)
+    {
+        try
+        {
+            string path = Path.Combine(file.ContentFolder, "rooms.json");
+            string json = File.ReadAllText(path);
+
+            RoomInfo[] infos = JsonConvert.DeserializeObject<RoomInfo[]>(json);
+            return infos.ToDictionary(x => x.Name, x => x);
+        }
+        catch (System.Exception ex)
+        {
+            ModLog.Error($"Failed to load room info: {ex}");
+            return [];
+        }
     }
 }
