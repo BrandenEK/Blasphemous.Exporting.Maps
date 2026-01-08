@@ -105,7 +105,6 @@ public class MapExporter : BlasMod
                 yield return null;
         }
         
-        ModLog.Warn($"Screenshot: {Time.frameCount}");
         PerformFreeze();
     }
 
@@ -123,34 +122,17 @@ public class MapExporter : BlasMod
         });
     }
 
-    protected override void OnLevelPreloaded(string oldLevel, string newLevel)
-    {
-        ModLog.Warn($"OnLevelPreloaded: {Time.frameCount}");
-    }
-
     protected override void OnLevelLoaded(string oldLevel, string newLevel)
     {
-        ModLog.Warn($"OnLevelLoaded: {Time.frameCount}");
-
         if (!_freezeNextRoom)
             return;
 
-        //PerformFreeze();
         UIController.instance.StartCoroutine(WaitForScreenshot());
     }
 
     protected override void OnDispose()
     {
         RoomStorage.SaveRooms();
-    }
-
-    public void OnLoadRoom()
-    {
-        ModLog.Warn($"Load game patch: {Time.frameCount}");
-        //if (!_freezeNextRoom)
-        //    return;
-
-        //PerformFreeze();
     }
 
     protected override void OnLateUpdate()
