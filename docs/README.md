@@ -24,7 +24,7 @@
 1. Bosses will probably have to be killed first to obtain the room bounds, but screenshots should then be taken on a new save
 
 ## Available commands
-- Press "\" to open the debug console
+- Press "\\" to open the debug console
 - Type the desired command followed by the parameters all separated by a single space
 
 | Command | Parameters | Description |
