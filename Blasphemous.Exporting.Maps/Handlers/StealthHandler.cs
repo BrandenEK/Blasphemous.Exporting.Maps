@@ -3,7 +3,6 @@ using Framework.Managers;
 using Gameplay.GameControllers.Environment;
 using Gameplay.UI.Widgets;
 using System.Collections.Generic;
-using Tools.Level.Layout;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -39,7 +38,7 @@ public class StealthHandler
                 var layer = parallax.Layers[i];
                 //ModLog.Error($"Layer {layer.layer.name}: {layer.speed}");
 
-                if (Mathf.Abs(layer.speed) <= PARALLAX_CUTOFF)
+                if (layer.speed >= 0 && layer.speed <= PARALLAX_CUTOFF)
                 {
                     parallax.Layers[i] = new ParallaxData()
                     {
