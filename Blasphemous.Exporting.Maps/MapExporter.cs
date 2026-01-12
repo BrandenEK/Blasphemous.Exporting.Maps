@@ -184,5 +184,5 @@ public class MapExporter : BlasMod
     private const int PIXEL_SCALING = 32;
     private const float CAMERA_SPEED = 30f;
     private const int DELAY_DIVISOR = 5;
-    private const int EXPORT_VERSION = 2;
+    private const int EXPORT_VERSION = 3;
 }
