@@ -64,9 +64,10 @@ public class MapExporter : BlasMod
         Graphics.CopyTexture(partTexture, 0, 0, 0, 0, WIDTH, HEIGHT, fullTexture, 0, 0, (int)location.x, (int)location.y);
 
         byte[] bytes = fullTexture.EncodeToPNG();
-        string path = Path.Combine(FileHandler.ContentFolder, $"{Core.LevelManager.currentLevel.LevelName}-v{EXPORT_VERSION}.png");
+        string folder = Path.Combine(FileHandler.ContentFolder, Path.Combine($"v{EXPORT_VERSION}", Core.LevelManager.currentLevel.LevelName));
 
-        File.WriteAllBytes(path, bytes);
+        Directory.CreateDirectory(folder);
+        File.WriteAllBytes(Path.Combine(folder, "layout.png"), bytes);
 
         TextureHandler.ActivateRenderTexture(false);
         Object.Destroy(partTexture);
