@@ -22,6 +22,7 @@
 1. Take all screenshots on an empty save, so that everything is as original as possible
 1. The exception to this is breakable walls, these should already be cleared
 1. Bosses will probably have to be killed first to obtain the room bounds, but screenshots should then be taken on a new save
+1. Stand near to the room before loading it in screenshot mode, otherwise the parallax will be weird
 
 ## Available commands
 - Press "\\" to open the debug console
