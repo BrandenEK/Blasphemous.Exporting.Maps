@@ -32,6 +32,9 @@ public class StealthHandler
         // Remove parallax
         foreach (var parallax in Object.FindObjectsOfType<ParallaxController>())
         {
+            if (parallax.Layers == null)
+                continue;
+
             ModLog.Info("Removing parallax");
             for (int i = 0; i < parallax.Layers.Length; i++)
             {
@@ -48,7 +51,8 @@ public class StealthHandler
                 }
                 else
                 {
-                    layer.layer.SetActive(false);
+                    if (layer.layer != null)
+                        layer.layer.SetActive(false);
                 }
             }
         }
@@ -87,11 +91,16 @@ public class StealthHandler
         // Recover parallax
         foreach (var parallax in Object.FindObjectsOfType<ParallaxController>())
         {
+            if (parallax.Layers == null)
+                continue;
+
             ModLog.Info("Recovering parallax");
             for (int i = 0; i < parallax.Layers.Length; i++)
             {
                 var layer = parallax.Layers[i];
-                layer.layer.SetActive(true);
+
+                if (layer.layer != null)
+                    layer.layer.SetActive(true);
             }
         }
 
