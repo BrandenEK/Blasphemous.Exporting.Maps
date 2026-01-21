@@ -180,9 +180,9 @@ public class MapExporter : BlasMod
         provider.RegisterCommand(new MapCommand());
     }
 
-    internal const int WIDTH = 640;
-    internal const int HEIGHT = 360;
-    private const int PIXEL_SCALING = 32;
+    internal const int WIDTH = 1920;
+    internal const int HEIGHT = 1080;
+    private const int PIXEL_SCALING = 96;
     private const float CAMERA_SPEED = 30f;
     private const int DELAY_DIVISOR = 5;
     private const int EXPORT_VERSION = 3;
