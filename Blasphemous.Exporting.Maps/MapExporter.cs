@@ -164,7 +164,6 @@ public class MapExporter : BlasMod
 
         // Update camera position
         Camera.main.GetComponent<ProCamera2D>().MoveCameraInstantlyToPosition(_cameraLocation);
-        CameraHandler.MoveCamera(Camera.main.transform.position);
 
         // Handle screenshot
         if (InputHandler.GetKeyDown("TakeScreenshot"))

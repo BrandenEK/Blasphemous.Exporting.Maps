@@ -16,17 +16,12 @@ public class CameraHandler
             CreateCamera();
     }
 
-    public void MoveCamera(Vector3 position)
-    {
-        _renderCamera.transform.position = Camera.main.transform.position;
-    }
-
     private void CreateCamera()
     {
         ModLog.Info("Creating image camera");
 
         var obj = new GameObject("Image Camera");
-        obj.transform.SetParent(Camera.main.transform.parent);
+        obj.transform.SetParent(Camera.main.transform, false);
 
         var camera = obj.AddComponent<Camera>();
         camera.orthographic = true;
