@@ -5,7 +5,6 @@ using Com.LuisPedroFonseca.ProCamera2D;
 using Framework.Managers;
 using Gameplay.UI;
 using System.Collections;
-using System.IO;
 using UnityEngine;
 
 namespace Blasphemous.Exporting.Maps;
@@ -54,24 +53,11 @@ public class MapExporter : BlasMod
     private void PerformScreenshot()
     {
         ModLog.Info("Saving screenshot");
-        TextureHandler.ActivateRenderTexture(true);
 
-        Texture2D fullTexture = TextureHandler.ImageTexture;
-        Texture2D partTexture = new Texture2D(WIDTH, HEIGHT, TextureFormat.ARGB32, false);
-        partTexture.ReadPixels(new Rect(0, 0, WIDTH, HEIGHT), 0, 0);
-        partTexture.Apply();
+        int x = (int)((_cameraLocation.x - _cameraBounds.x) * PIXEL_SCALING);
+        int y = (int)((_cameraLocation.y - _cameraBounds.z) * PIXEL_SCALING);
 
-        var location = new Vector2((_cameraLocation.x - _cameraBounds.x) * PIXEL_SCALING, (_cameraLocation.y - _cameraBounds.z) * PIXEL_SCALING);
-        Graphics.CopyTexture(partTexture, 0, 0, 0, 0, WIDTH, HEIGHT, fullTexture, 0, 0, (int)location.x, (int)location.y);
-
-        byte[] bytes = fullTexture.EncodeToPNG();
-        string folder = Path.Combine(FileHandler.ContentFolder, $"v{EXPORT_VERSION}");
-
-        Directory.CreateDirectory(folder);
-        File.WriteAllBytes(Path.Combine(folder, $"{Core.LevelManager.currentLevel.LevelName}.png"), bytes);
-
-        TextureHandler.ActivateRenderTexture(false);
-        Object.Destroy(partTexture);
+        ExportHandler.OnScreenshot(x, y);
     }
 
     private void PerformFreeze()
@@ -113,11 +99,11 @@ public class MapExporter : BlasMod
 
     protected override void OnInitialize()
     {
+        TextureHandler = new TextureHandler();
         CameraHandler = new CameraHandler();
-        ExportHandler = new ExportHandler();
+        ExportHandler = new ExportHandler(FileHandler, TextureHandler);
         RoomStorage = new RoomStorage(FileHandler);
         StealthHandler = new StealthHandler();
-        TextureHandler = new TextureHandler();
 
         InputHandler.RegisterDefaultKeybindings(new System.Collections.Generic.Dictionary<string, KeyCode>()
         {
@@ -181,10 +167,10 @@ public class MapExporter : BlasMod
         provider.RegisterCommand(new MapCommand());
     }
 
+    internal const int EXPORT_VERSION = 3;
     internal const int WIDTH = 640;
     internal const int HEIGHT = 360;
     private const int PIXEL_SCALING = 32;
     private const float CAMERA_SPEED = 30f;
     private const int DELAY_DIVISOR = 5;
-    private const int EXPORT_VERSION = 3;
 }
