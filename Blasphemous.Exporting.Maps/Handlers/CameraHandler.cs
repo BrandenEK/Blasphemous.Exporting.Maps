@@ -8,7 +8,14 @@ namespace Blasphemous.Exporting.Maps.Handlers;
 /// </summary>
 public class CameraHandler
 {
+    private readonly TextureHandler _textureHandler;
+
     private Camera _renderCamera;
+
+    public CameraHandler(TextureHandler textureHandler)
+    {
+        _textureHandler = textureHandler;
+    }
 
     public void OnFreeze()
     {
@@ -28,7 +35,7 @@ public class CameraHandler
         camera.orthographicSize = Camera.main.orthographicSize;
         camera.aspect = Camera.main.aspect;
 
-        Main.MapExporter.TextureHandler.AddRenderTextureToCamera(camera);
+        _textureHandler.AddRenderTextureToCamera(camera);
         _renderCamera = camera;
     }
 }

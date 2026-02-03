@@ -13,11 +13,11 @@ public class MapExporter : BlasMod
 {
     internal MapExporter() : base(ModInfo.MOD_ID, ModInfo.MOD_NAME, ModInfo.MOD_AUTHOR, ModInfo.MOD_VERSION) { }
 
-    public CameraHandler CameraHandler { get; private set; }
-    public ExportHandler ExportHandler { get; private set; }
     public RoomStorage RoomStorage { get; private set; }
-    public StealthHandler StealthHandler { get; private set; }
-    public TextureHandler TextureHandler { get; private set; }
+    private CameraHandler CameraHandler { get; set; }
+    private ExportHandler ExportHandler { get; set; }
+    private StealthHandler StealthHandler { get; set; }
+    private TextureHandler TextureHandler { get; set; }
 
     private bool _freezeNextRoom = false;
     private bool _isFrozen = false;
@@ -100,7 +100,7 @@ public class MapExporter : BlasMod
     protected override void OnInitialize()
     {
         TextureHandler = new TextureHandler();
-        CameraHandler = new CameraHandler();
+        CameraHandler = new CameraHandler(TextureHandler);
         ExportHandler = new ExportHandler(FileHandler, TextureHandler);
         RoomStorage = new RoomStorage(FileHandler);
         StealthHandler = new StealthHandler();
