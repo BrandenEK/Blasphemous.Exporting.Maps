@@ -8,9 +8,9 @@ namespace Blasphemous.Exporting.Maps.Handlers;
 public class TextureHandler
 {
     private readonly RenderTexture _renderTexture;
-    private Texture2D _imageTexture;
 
-    public Texture2D ImageTexture => _imageTexture;
+    private Texture2D _layoutTexture;
+    private Texture2D _hitboxTexture;
 
     public TextureHandler()
     {
@@ -20,14 +20,20 @@ public class TextureHandler
 
     public void OnUnfreeze()
     {
-        if (_imageTexture != null)
-            Object.Destroy(_imageTexture);
-        _imageTexture = null;
+        if (_layoutTexture != null)
+            Object.Destroy(_layoutTexture);
+
+        if (_hitboxTexture != null)
+            Object.Destroy(_hitboxTexture);
+
+        _layoutTexture = null;
+        _hitboxTexture = null;
     }
 
     public void CreateNewTexture(int width, int height)
     {
-        _imageTexture = new Texture2D(width, height, TextureFormat.ARGB32, false);
+        _layoutTexture = new Texture2D(width, height, TextureFormat.ARGB32, false);
+        _hitboxTexture = new Texture2D(width, height, TextureFormat.ARGB32, false);
     }
 
     public void ActivateRenderTexture(bool active)
