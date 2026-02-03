@@ -15,6 +15,7 @@ public class MapExporter : BlasMod
     internal MapExporter() : base(ModInfo.MOD_ID, ModInfo.MOD_NAME, ModInfo.MOD_AUTHOR, ModInfo.MOD_VERSION) { }
 
     public CameraHandler CameraHandler { get; private set; }
+    public ExportHandler ExportHandler { get; private set; }
     public RoomStorage RoomStorage { get; private set; }
     public StealthHandler StealthHandler { get; private set; }
     public TextureHandler TextureHandler { get; private set; }
@@ -113,6 +114,7 @@ public class MapExporter : BlasMod
     protected override void OnInitialize()
     {
         CameraHandler = new CameraHandler();
+        ExportHandler = new ExportHandler();
         RoomStorage = new RoomStorage(FileHandler);
         StealthHandler = new StealthHandler();
         TextureHandler = new TextureHandler();
