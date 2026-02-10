@@ -31,7 +31,7 @@ public class RoomStorage
 
     public RoomInfo[] GetAllRooms()
     {
-        return _rooms.Values.ToArray();
+        return _rooms.Values.OrderBy(x => x.Name).ToArray();
     }
 
     private RoomInfo CreateRoom(string room)
