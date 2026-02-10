@@ -30,8 +30,14 @@ public class MapCommand : ModCommand
         if (!ValidateParameterList(parameters, 1))
             return;
 
-        string text = parameters[0].ToUpper();
+        if (parameters[0] == "all")
+            LoadAll();
+        else
+            LoadSingle(parameters[0].ToUpper());
+    }
 
+    private void LoadSingle(string text)
+    {
         if (Core.LevelManager.currentLevel.LevelName == text)
         {
             Write($"Can not export the currently loaded room");
@@ -45,6 +51,25 @@ public class MapCommand : ModCommand
         }
 
         Main.MapExporter.StartExport(room);
+    }
+
+    private void LoadAll()
+    {
+        var rooms = Main.MapExporter.RoomStorage.GetAllRooms();
+
+        if (!rooms.Any())
+        {
+            Write($"There are no rooms to export");
+            return;
+        }
+
+        if (Core.LevelManager.currentLevel.LevelName == rooms.First().Name)
+        {
+            Write($"Can not start export the currently loaded room");
+            return;
+        }
+
+        Main.MapExporter.StartExportSequence();
     }
 
     private void Door(string[] parameters)

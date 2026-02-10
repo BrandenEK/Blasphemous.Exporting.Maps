@@ -29,6 +29,11 @@ public class RoomStorage
         return _rooms.TryGetValue(room, out result);
     }
 
+    public IEnumerable<RoomInfo> GetAllRooms()
+    {
+        return _rooms.Values;
+    }
+
     private RoomInfo CreateRoom(string room)
     {
         var info = new RoomInfo()
