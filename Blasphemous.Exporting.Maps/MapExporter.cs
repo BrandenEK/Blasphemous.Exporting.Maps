@@ -25,6 +25,10 @@ public class MapExporter : BlasMod
     private Vector2 _cameraLocation;
     private Vector4 _cameraBounds;
 
+    private bool _inSequence = false;
+    private RoomInfo[] _sequenceRooms = null;
+    private int _sequenceIndex = 0;
+
     public void StartExport(RoomInfo room)
     {
         ModLog.Info($"Starting export for room {room.Name}");
@@ -48,6 +52,17 @@ public class MapExporter : BlasMod
         _useDelay = room.Delay;
 
         Core.SpawnManager.SpawnFromDoor(room.Name, room.Door, true);
+    }
+
+    public void StartExportSequence(RoomInfo[] rooms)
+    {
+        ModLog.Info($"Starting sequence expoort for {rooms.Length} rooms");
+
+        _inSequence = true;
+        _sequenceRooms = rooms;
+        _sequenceIndex = 0;
+
+        StartExport(_sequenceRooms[_sequenceIndex++]);
     }
 
     private void PerformScreenshot()
@@ -96,6 +111,20 @@ public class MapExporter : BlasMod
 
         StealthHandler.OnUnfreeze();
         TextureHandler.OnUnfreeze();
+
+        if (_inSequence)
+        {
+            if (_sequenceIndex >= _sequenceRooms.Length)
+            {
+                _inSequence = false;
+                _sequenceRooms = null;
+                _sequenceIndex = 0;
+            }
+            else
+            {
+                StartExport(_sequenceRooms[_sequenceIndex++]);
+            }
+        }
     }
 
     private IEnumerator WaitForScreenshot()
