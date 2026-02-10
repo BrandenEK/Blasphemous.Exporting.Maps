@@ -55,21 +55,21 @@ public class MapCommand : ModCommand
 
     private void LoadAll()
     {
-        var rooms = Main.MapExporter.RoomStorage.GetAllRooms();
+        RoomInfo[] rooms = Main.MapExporter.RoomStorage.GetAllRooms();
 
-        if (!rooms.Any())
+        if (rooms.Length == 0)
         {
             Write($"There are no rooms to export");
             return;
         }
 
-        if (Core.LevelManager.currentLevel.LevelName == rooms.First().Name)
+        if (Core.LevelManager.currentLevel.LevelName == rooms[0].Name)
         {
             Write($"Can not start export the currently loaded room");
             return;
         }
 
-        Main.MapExporter.StartExportSequence();
+        Main.MapExporter.StartExportSequence(rooms);
     }
 
     private void Door(string[] parameters)

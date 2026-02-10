@@ -50,6 +50,11 @@ public class MapExporter : BlasMod
         Core.SpawnManager.SpawnFromDoor(room.Name, room.Door, true);
     }
 
+    public void StartExportSequence(RoomInfo[] rooms)
+    {
+
+    }
+
     private void PerformScreenshot()
     {
         ModLog.Info("Saving screenshot");
