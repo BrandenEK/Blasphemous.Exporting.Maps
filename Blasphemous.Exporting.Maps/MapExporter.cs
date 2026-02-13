@@ -6,6 +6,7 @@ using Framework.Managers;
 using Gameplay.UI;
 using System.Collections;
 using System.IO;
+using System.Linq;
 using UnityEngine;
 
 namespace Blasphemous.Exporting.Maps;
@@ -148,6 +149,7 @@ public class MapExporter : BlasMod
 
         InputHandler.RegisterDefaultKeybindings(new System.Collections.Generic.Dictionary<string, KeyCode>()
         {
+            { "ManualFreeze", KeyCode.BackQuote },
             { "TakeScreenshot", KeyCode.Minus },
             { "Exit", KeyCode.Equals },
         });
@@ -155,7 +157,7 @@ public class MapExporter : BlasMod
 
     protected override void OnLevelLoaded(string oldLevel, string newLevel)
     {
-        if (!_freezeNextRoom)
+        if (!_freezeNextRoom || MANUAL_ROOMS.Contains(newLevel))
             return;
 
         UIController.instance.StartCoroutine(WaitForScreenshot());
@@ -169,7 +171,13 @@ public class MapExporter : BlasMod
     protected override void OnLateUpdate()
     {
         if (!_isFrozen)
+        {
+            // Handle manual freeze in certain rooms
+            if (InputHandler.GetKeyDown("ManualFreeze") && MANUAL_ROOMS.Contains(Core.LevelManager.currentLevel.LevelName))
+                PerformFreeze();
+
             return;
+        }
 
         // Handle input
         if (Input.GetKey(KeyCode.LeftArrow))
@@ -207,6 +215,11 @@ public class MapExporter : BlasMod
     {
         provider.RegisterCommand(new MapCommand());
     }
+
+    private static readonly string[] MANUAL_ROOMS =
+    {
+        "D07Z01S03", "D07Z01S05"
+    };
 
     internal const int WIDTH = 640;
     internal const int HEIGHT = 360;
