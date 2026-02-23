@@ -1,0 +1,2981 @@
+[
+  {
+    "name": "D01Z01S01",
+    "door": "W",
+    "delay": true,
+    "xmin": -720.0,
+    "xmax": -680.0,
+    "ymin": -0.375,
+    "ymax": 13.0
+  },
+  {
+    "name": "D01Z01S02",
+    "door": "W",
+    "delay": false,
+    "xmin": -660.0,
+    "xmax": -620.0,
+    "ymin": 13.0,
+    "ymax": 13.0
+  },
+  {
+    "name": "D01Z01S03",
+    "door": "W",
+    "delay": true,
+    "xmin": -601.21875,
+    "xmax": -539.4375,
+    "ymin": 1.625,
+    "ymax": 13.3125
+  },
+  {
+    "name": "D01Z01S07",
+    "door": "W",
+    "delay": false,
+    "xmin": -759.0,
+    "xmax": -740.0,
+    "ymin": 13.0,
+    "ymax": 13.0
+  },
+  {
+    "name": "D01BZ04S01",
+    "door": "church",
+    "delay": false,
+    "xmin": -451.0,
+    "xmax": -431.0,
+    "ymin": 14.0,
+    "ymax": 14.0
+  },
+  {
+    "name": "D01BZ06S01",
+    "door": "Ossary",
+    "delay": false,
+    "xmin": -460.0,
+    "xmax": -440.0,
+    "ymin": 2.0,
+    "ymax": 2.0
+  },
+  {
+    "name": "D01BZ08S01",
+    "door": "W",
+    "delay": false,
+    "xmin": -420.0,
+    "xmax": -402.0,
+    "ymin": 1.5,
+    "ymax": 1.5
+  },
+  {
+    "name": "D01Z02S01",
+    "door": "W",
+    "delay": false,
+    "xmin": -524.0,
+    "xmax": -500.0,
+    "ymin": 15.28125,
+    "ymax": 15.28125
+  },
+  {
+    "name": "D01Z02S02",
+    "door": "SW",
+    "delay": false,
+    "xmin": -480.0,
+    "xmax": -480.0,
+    "ymin": -2.375,
+    "ymax": 18.375
+  },
+  {
+    "name": "D01Z02S03",
+    "door": "W",
+    "delay": false,
+    "xmin": -460.0,
+    "xmax": -440.0,
+    "ymin": 14.0625,
+    "ymax": 22.375
+  },
+  {
+    "name": "D01Z02S04",
+    "door": "W",
+    "delay": false,
+    "xmin": -460.0,
+    "xmax": -460.0,
+    "ymin": 2.0,
+    "ymax": 2.0
+  },
+  {
+    "name": "D01Z02S05",
+    "door": "W",
+    "delay": false,
+    "xmin": -420.0,
+    "xmax": -420.0,
+    "ymin": 13.53125,
+    "ymax": 13.53125
+  },
+  {
+    "name": "D01Z02S06",
+    "door": "W",
+    "delay": false,
+    "xmin": -500.0,
+    "xmax": -500.0,
+    "ymin": 0.0,
+    "ymax": 0.0
+  },
+  {
+    "name": "D01Z02S07",
+    "door": "E",
+    "delay": false,
+    "xmin": -520.0,
+    "xmax": -520.0,
+    "ymin": 1.0,
+    "ymax": 1.0
+  },
+  {
+    "name": "D01Z03S01",
+    "door": "W",
+    "delay": false,
+    "xmin": -398.0,
+    "xmax": -340.0,
+    "ymin": 0.625,
+    "ymax": 13.84375
+  },
+  {
+    "name": "D01Z03S02",
+    "door": "SW",
+    "delay": true,
+    "xmin": -320.0,
+    "xmax": -300.0,
+    "ymin": -2.375,
+    "ymax": 22.375
+  },
+  {
+    "name": "D01Z03S03",
+    "door": "W",
+    "delay": false,
+    "xmin": -280.0,
+    "xmax": -220.0,
+    "ymin": 8.625,
+    "ymax": 11.875
+  },
+  {
+    "name": "D01Z03S04",
+    "door": "SW",
+    "delay": false,
+    "xmin": -200.0,
+    "xmax": -200.0,
+    "ymin": -0.375,
+    "ymax": 46.375
+  },
+  {
+    "name": "D01Z03S05",
+    "door": "W",
+    "delay": false,
+    "xmin": -180.0,
+    "xmax": -140.0,
+    "ymin": -13.375,
+    "ymax": 1.65625
+  },
+  {
+    "name": "D01Z03S06",
+    "door": "W",
+    "delay": false,
+    "xmin": -180.0,
+    "xmax": -120.0,
+    "ymin": 7.625,
+    "ymax": 13.78125
+  },
+  {
+    "name": "D01Z03S07",
+    "door": "E",
+    "delay": false,
+    "xmin": -227.0,
+    "xmax": -220.0,
+    "ymin": 30.625,
+    "ymax": 35.375
+  },
+  {
+    "name": "D01BZ02S01",
+    "door": "C",
+    "delay": false,
+    "xmin": 0.0,
+    "xmax": 0.0,
+    "ymin": 2.0,
+    "ymax": 2.0
+  },
+  {
+    "name": "D01Z04S01",
+    "door": "S",
+    "delay": false,
+    "xmin": -120.0,
+    "xmax": -120.0,
+    "ymin": -33.375,
+    "ymax": 1.75
+  },
+  {
+    "name": "D01Z04S02",
+    "door": "W",
+    "delay": false,
+    "xmin": 20.03125,
+    "xmax": 20.03125,
+    "ymin": -97.0,
+    "ymax": -97.0
+  },
+  {
+    "name": "D01Z04S03",
+    "door": "E",
+    "delay": false,
+    "xmin": -140.0,
+    "xmax": -140.0,
+    "ymin": -23.0,
+    "ymax": -23.0
+  },
+  {
+    "name": "D01Z04S05",
+    "door": "SW",
+    "delay": true,
+    "xmin": -100.0,
+    "xmax": -80.0,
+    "ymin": -34.375,
+    "ymax": -22.625
+  },
+  {
+    "name": "D01Z04S06",
+    "door": "SW",
+    "delay": false,
+    "xmin": -100.0,
+    "xmax": -60.0,
+    "ymin": -58.375,
+    "ymax": -43.625
+  },
+  {
+    "name": "D01Z04S07",
+    "door": "W",
+    "delay": false,
+    "xmin": -40.0,
+    "xmax": -40.0,
+    "ymin": -56.0,
+    "ymax": -56.0
+  },
+  {
+    "name": "D01Z04S08",
+    "door": "E",
+    "delay": false,
+    "xmin": -140.0,
+    "xmax": -140.0,
+    "ymin": -53.375,
+    "ymax": -53.375
+  },
+  {
+    "name": "D01Z04S09",
+    "door": "W",
+    "delay": false,
+    "xmin": -140.0,
+    "xmax": -140.0,
+    "ymin": -65.375,
+    "ymax": -65.375
+  },
+  {
+    "name": "D01Z04S10",
+    "door": "NW",
+    "delay": true,
+    "xmin": -100.0,
+    "xmax": -40.0,
+    "ymin": -79.375,
+    "ymax": -66.625
+  },
+  {
+    "name": "D01Z04S11",
+    "door": "NE",
+    "delay": false,
+    "xmin": -92.0,
+    "xmax": -60.0,
+    "ymin": -88.375,
+    "ymax": -87.625
+  },
+  {
+    "name": "D01Z04S12",
+    "door": "W",
+    "delay": false,
+    "xmin": -40.0,
+    "xmax": -20.0,
+    "ymin": -102.375,
+    "ymax": -86.625
+  },
+  {
+    "name": "D01Z04S13",
+    "door": "SW",
+    "delay": false,
+    "xmin": 0.0,
+    "xmax": 0.0,
+    "ymin": -108.375,
+    "ymax": -97.625
+  },
+  {
+    "name": "D01Z04S14",
+    "door": "E",
+    "delay": false,
+    "xmin": -44.0,
+    "xmax": -20.0,
+    "ymin": -112.375,
+    "ymax": -109.625
+  },
+  {
+    "name": "D01Z04S15",
+    "door": "SW",
+    "delay": true,
+    "xmin": -120.0,
+    "xmax": -120.0,
+    "ymin": -66.0,
+    "ymax": -43.625
+  },
+  {
+    "name": "D01Z04S16",
+    "door": "W",
+    "delay": false,
+    "xmin": 20.03125,
+    "xmax": 20.03125,
+    "ymin": -109.0,
+    "ymax": -109.0
+  },
+  {
+    "name": "D01Z04S17",
+    "door": "W",
+    "delay": false,
+    "xmin": -100.0,
+    "xmax": -100.0,
+    "ymin": -9.0,
+    "ymax": -9.0
+  },
+  {
+    "name": "D01Z04S18",
+    "door": "W",
+    "delay": false,
+    "xmin": -100.0,
+    "xmax": -60.0,
+    "ymin": -98.75,
+    "ymax": -93.625
+  },
+  {
+    "name": "D01Z04S19",
+    "door": "W",
+    "delay": false,
+    "xmin": -142.0,
+    "xmax": -120.0,
+    "ymin": -98.0,
+    "ymax": -98.0
+  },
+  {
+    "name": "D01BZ05S01",
+    "door": "Reward",
+    "delay": false,
+    "xmin": -420.0,
+    "xmax": -420.0,
+    "ymin": -108.6875,
+    "ymax": -108.6875
+  },
+  {
+    "name": "D01BZ09S01",
+    "door": "W",
+    "delay": false,
+    "xmin": -352.0,
+    "xmax": -352.0,
+    "ymin": -105.5,
+    "ymax": -105.5
+  },
+  {
+    "name": "D01Z05S01",
+    "door": "W",
+    "delay": false,
+    "xmin": -441.0,
+    "xmax": -441.0,
+    "ymin": -11.375,
+    "ymax": 0.375
+  },
+  {
+    "name": "D01Z05S02",
+    "door": "W",
+    "delay": false,
+    "xmin": -440.0,
+    "xmax": -400.0,
+    "ymin": -23.375,
+    "ymax": -22.0
+  },
+  {
+    "name": "D01Z05S03",
+    "door": "S",
+    "delay": true,
+    "xmin": -380.0,
+    "xmax": -380.0,
+    "ymin": -66.375,
+    "ymax": -20.625
+  },
+  {
+    "name": "D01Z05S04",
+    "door": "W",
+    "delay": false,
+    "xmin": -360.0,
+    "xmax": -320.0,
+    "ymin": -20.21875,
+    "ymax": -20.21875
+  },
+  {
+    "name": "D01Z05S05",
+    "door": "SW",
+    "delay": true,
+    "xmin": -300.0,
+    "xmax": -300.0,
+    "ymin": -54.375,
+    "ymax": -14.375
+  },
+  {
+    "name": "D01Z05S06",
+    "door": "W",
+    "delay": false,
+    "xmin": -280.0,
+    "xmax": -233.34375,
+    "ymin": -21.375,
+    "ymax": -21.375
+  },
+  {
+    "name": "D01Z05S07",
+    "door": "E",
+    "delay": false,
+    "xmin": -400.0,
+    "xmax": -400.0,
+    "ymin": -41.9375,
+    "ymax": -41.9375
+  },
+  {
+    "name": "D01Z05S08",
+    "door": "W",
+    "delay": false,
+    "xmin": -359.0,
+    "xmax": -340.0,
+    "ymin": -54.375,
+    "ymax": -44.625
+  },
+  {
+    "name": "D01Z05S09",
+    "door": "NW",
+    "delay": false,
+    "xmin": -280.0,
+    "xmax": -260.0,
+    "ymin": -56.375,
+    "ymax": -44.625
+  },
+  {
+    "name": "D01Z05S10",
+    "door": "S",
+    "delay": false,
+    "xmin": -240.0,
+    "xmax": -240.0,
+    "ymin": -66.375,
+    "ymax": -43.0
+  },
+  {
+    "name": "D01Z05S11",
+    "door": "W",
+    "delay": false,
+    "xmin": -220.0,
+    "xmax": -180.0,
+    "ymin": -43.0,
+    "ymax": -43.0
+  },
+  {
+    "name": "D01Z05S12",
+    "door": "W",
+    "delay": false,
+    "xmin": -220.0,
+    "xmax": -160.34375,
+    "ymin": -66.0,
+    "ymax": -66.0
+  },
+  {
+    "name": "D01Z05S13",
+    "door": "SW",
+    "delay": false,
+    "xmin": -397.0,
+    "xmax": -300.0,
+    "ymin": -78.0,
+    "ymax": -78.0
+  },
+  {
+    "name": "D01Z05S14",
+    "door": "W",
+    "delay": false,
+    "xmin": -280.0,
+    "xmax": -240.0,
+    "ymin": -87.375,
+    "ymax": -76.625
+  },
+  {
+    "name": "D01Z05S15",
+    "door": "SW",
+    "delay": false,
+    "xmin": -220.0,
+    "xmax": -220.0,
+    "ymin": -99.375,
+    "ymax": -79.625
+  },
+  {
+    "name": "D01Z05S16",
+    "door": "SW",
+    "delay": false,
+    "xmin": -400.0,
+    "xmax": -400.0,
+    "ymin": -111.375,
+    "ymax": -88.0
+  },
+  {
+    "name": "D01Z05S17",
+    "door": "W",
+    "delay": false,
+    "xmin": -380.0,
+    "xmax": -380.0,
+    "ymin": -110.0,
+    "ymax": -110.0
+  },
+  {
+    "name": "D01Z05S18",
+    "door": "E",
+    "delay": false,
+    "xmin": -320.0,
+    "xmax": -320.0,
+    "ymin": -54.0,
+    "ymax": -54.0
+  },
+  {
+    "name": "D01Z05S19",
+    "door": "W",
+    "delay": false,
+    "xmin": -200.0,
+    "xmax": -160.0,
+    "ymin": -100.0,
+    "ymax": -100.0
+  },
+  {
+    "name": "D01Z05S20",
+    "door": "W",
+    "delay": false,
+    "xmin": -420.0,
+    "xmax": -420.0,
+    "ymin": -32.625,
+    "ymax": -32.625
+  },
+  {
+    "name": "D01Z05S21",
+    "door": "W",
+    "delay": false,
+    "xmin": -420.0,
+    "xmax": -420.0,
+    "ymin": -108.0,
+    "ymax": -108.0
+  },
+  {
+    "name": "D01Z05S22",
+    "door": "E",
+    "delay": false,
+    "xmin": -238.0,
+    "xmax": -238.0,
+    "ymin": -98.0,
+    "ymax": -98.0
+  },
+  {
+    "name": "D01Z05S23",
+    "door": "W",
+    "delay": false,
+    "xmin": -460.0,
+    "xmax": -460.0,
+    "ymin": -107.4375,
+    "ymax": -107.4375
+  },
+  {
+    "name": "D01Z05S24",
+    "door": "W",
+    "delay": false,
+    "xmin": -481.09375,
+    "xmax": -481.09375,
+    "ymin": -107.5625,
+    "ymax": -107.5625
+  },
+  {
+    "name": "D01Z05S25",
+    "door": "SW",
+    "delay": false,
+    "xmin": -440.0,
+    "xmax": -440.0,
+    "ymin": -231.375,
+    "ymax": -33.625
+  },
+  {
+    "name": "D01Z05S26",
+    "door": "W",
+    "delay": false,
+    "xmin": -422.0,
+    "xmax": -422.0,
+    "ymin": -229.0,
+    "ymax": -229.0
+  },
+  {
+    "name": "D01Z05S27",
+    "door": "E",
+    "delay": false,
+    "xmin": -484.0,
+    "xmax": -465.0,
+    "ymin": -9.875,
+    "ymax": -9.875
+  },
+  {
+    "name": "D01BZ07S01",
+    "door": "Santos",
+    "delay": false,
+    "xmin": 7.0,
+    "xmax": 13.0,
+    "ymin": 0.0,
+    "ymax": 0.0
+  },
+  {
+    "name": "D01Z06S01",
+    "door": "N",
+    "delay": false,
+    "xmin": -693.0,
+    "xmax": -660.0,
+    "ymin": 0.375,
+    "ymax": 0.375
+  },
+  {
+    "name": "D02Z01S01",
+    "door": "W",
+    "delay": false,
+    "xmin": -260.0,
+    "xmax": -220.0,
+    "ymin": 43.625,
+    "ymax": 55.375
+  },
+  {
+    "name": "D02Z01S02",
+    "door": "W",
+    "delay": false,
+    "xmin": -300.0,
+    "xmax": -280.0,
+    "ymin": 55.625,
+    "ymax": 77.375
+  },
+  {
+    "name": "D02Z01S03",
+    "door": "SW",
+    "delay": false,
+    "xmin": -360.0,
+    "xmax": -320.0,
+    "ymin": 76.9375,
+    "ymax": 99.375
+  },
+  {
+    "name": "D02Z01S04",
+    "door": "E",
+    "delay": false,
+    "xmin": -343.84375,
+    "xmax": -319.78125,
+    "ymin": 55.5625,
+    "ymax": 55.5625
+  },
+  {
+    "name": "D02Z01S05",
+    "door": "E",
+    "delay": false,
+    "xmin": -416.0,
+    "xmax": -380.0,
+    "ymin": 73.625,
+    "ymax": 78.375
+  },
+  {
+    "name": "D02Z01S06",
+    "door": "W",
+    "delay": true,
+    "xmin": -320.0,
+    "xmax": -260.0,
+    "ymin": 32.625,
+    "ymax": 44.375
+  },
+  {
+    "name": "D02Z01S08",
+    "door": "E",
+    "delay": false,
+    "xmin": -350.0,
+    "xmax": -340.0,
+    "ymin": 35.125,
+    "ymax": 35.125
+  },
+  {
+    "name": "D02Z01S09",
+    "door": "W",
+    "delay": false,
+    "xmin": -260.0,
+    "xmax": -239.0,
+    "ymin": 78.0,
+    "ymax": 78.0
+  },
+  {
+    "name": "D02BZ02S01",
+    "door": "C",
+    "delay": false,
+    "xmin": 0.0,
+    "xmax": 0.0,
+    "ymin": 2.0,
+    "ymax": 2.0
+  },
+  {
+    "name": "D02Z02S01",
+    "door": "W",
+    "delay": false,
+    "xmin": -380.0,
+    "xmax": -380.0,
+    "ymin": 97.625,
+    "ymax": 121.375
+  },
+  {
+    "name": "D02Z02S02",
+    "door": "NW",
+    "delay": false,
+    "xmin": -400.0,
+    "xmax": -400.0,
+    "ymin": 118.65625,
+    "ymax": 144.375
+  },
+  {
+    "name": "D02Z02S03",
+    "door": "SW",
+    "delay": false,
+    "xmin": -380.0,
+    "xmax": -380.0,
+    "ymin": 141.625,
+    "ymax": 178.375
+  },
+  {
+    "name": "D02Z02S04",
+    "door": "W",
+    "delay": false,
+    "xmin": -420.0,
+    "xmax": -420.0,
+    "ymin": 141.625,
+    "ymax": 177.375
+  },
+  {
+    "name": "D02Z02S05",
+    "door": "SW",
+    "delay": true,
+    "xmin": -400.0,
+    "xmax": -400.0,
+    "ymin": 165.0,
+    "ymax": 207.375
+  },
+  {
+    "name": "D02Z02S06",
+    "door": "E",
+    "delay": false,
+    "xmin": -480.0,
+    "xmax": -480.0,
+    "ymin": 100.0,
+    "ymax": 100.0
+  },
+  {
+    "name": "D02Z02S07",
+    "door": "W",
+    "delay": false,
+    "xmin": -440.0,
+    "xmax": -420.0,
+    "ymin": 209.0,
+    "ymax": 213.625
+  },
+  {
+    "name": "D02Z02S08",
+    "door": "W",
+    "delay": true,
+    "xmin": -440.0,
+    "xmax": -400.0,
+    "ymin": 91.625,
+    "ymax": 101.375
+  },
+  {
+    "name": "D02Z02S09",
+    "door": "E",
+    "delay": false,
+    "xmin": -440.0,
+    "xmax": -440.0,
+    "ymin": 166.0,
+    "ymax": 166.0
+  },
+  {
+    "name": "D02Z02S10",
+    "door": "W",
+    "delay": false,
+    "xmin": -379.0,
+    "xmax": -379.0,
+    "ymin": 187.5,
+    "ymax": 187.5
+  },
+  {
+    "name": "D02Z02S11",
+    "door": "W",
+    "delay": false,
+    "xmin": -460.0,
+    "xmax": -460.0,
+    "ymin": 50.625,
+    "ymax": 197.375
+  },
+  {
+    "name": "D02Z02S12",
+    "door": "W",
+    "delay": false,
+    "xmin": -442.0,
+    "xmax": -442.0,
+    "ymin": 112.0,
+    "ymax": 112.0
+  },
+  {
+    "name": "D02Z02S13",
+    "door": "W",
+    "delay": false,
+    "xmin": -440.0,
+    "xmax": -440.0,
+    "ymin": 199.0,
+    "ymax": 199.0
+  },
+  {
+    "name": "D02Z02S14",
+    "door": "W",
+    "delay": false,
+    "xmin": -360.0,
+    "xmax": -360.0,
+    "ymin": 179.0,
+    "ymax": 179.0
+  },
+  {
+    "name": "D02Z03S01",
+    "door": "W",
+    "delay": false,
+    "xmin": -500.0,
+    "xmax": -460.0,
+    "ymin": 208.0,
+    "ymax": 208.0
+  },
+  {
+    "name": "D02Z03S02",
+    "door": "W",
+    "delay": false,
+    "xmin": -460.0,
+    "xmax": -460.0,
+    "ymin": 231.625,
+    "ymax": 253.375
+  },
+  {
+    "name": "D02Z03S03",
+    "door": "W",
+    "delay": false,
+    "xmin": -500.0,
+    "xmax": -480.0,
+    "ymin": 230.625,
+    "ymax": 241.375
+  },
+  {
+    "name": "D02Z03S05",
+    "door": "S",
+    "delay": false,
+    "xmin": -560.0,
+    "xmax": -520.0,
+    "ymin": 231.125,
+    "ymax": 242.375
+  },
+  {
+    "name": "D02Z03S06",
+    "door": "W",
+    "delay": false,
+    "xmin": -600.0,
+    "xmax": -580.0,
+    "ymin": 230.625,
+    "ymax": 241.375
+  },
+  {
+    "name": "D02Z03S07",
+    "door": "W",
+    "delay": true,
+    "xmin": -580.0,
+    "xmax": -540.0,
+    "ymin": 209.625,
+    "ymax": 220.375
+  },
+  {
+    "name": "D02Z03S08",
+    "door": "SW",
+    "delay": false,
+    "xmin": -520.0,
+    "xmax": -520.0,
+    "ymin": 198.125,
+    "ymax": 220.375
+  },
+  {
+    "name": "D02Z03S09",
+    "door": "W",
+    "delay": false,
+    "xmin": -599.78125,
+    "xmax": -560.25,
+    "ymin": 254.0,
+    "ymax": 254.0
+  },
+  {
+    "name": "D02Z03S10",
+    "door": "W",
+    "delay": false,
+    "xmin": -440.0,
+    "xmax": -401.0,
+    "ymin": 263.75,
+    "ymax": 263.75
+  },
+  {
+    "name": "D02Z03S11",
+    "door": "W",
+    "delay": false,
+    "xmin": -460.0,
+    "xmax": -460.0,
+    "ymin": 264.96875,
+    "ymax": 276.375
+  },
+  {
+    "name": "D02Z03S12",
+    "door": "E",
+    "delay": false,
+    "xmin": -578.0,
+    "xmax": -540.0,
+    "ymin": 199.0,
+    "ymax": 201.0
+  },
+  {
+    "name": "D02Z03S13",
+    "door": "W",
+    "delay": false,
+    "xmin": -440.0,
+    "xmax": -440.0,
+    "ymin": 255.0,
+    "ymax": 255.0
+  },
+  {
+    "name": "D02Z03S14",
+    "door": "W",
+    "delay": false,
+    "xmin": -500.0,
+    "xmax": -480.0,
+    "ymin": 197.0,
+    "ymax": 197.0
+  },
+  {
+    "name": "D02Z03S15",
+    "door": "E",
+    "delay": false,
+    "xmin": -478.0,
+    "xmax": -478.0,
+    "ymin": 265.71875,
+    "ymax": 265.71875
+  },
+  {
+    "name": "D02Z03S16",
+    "door": "W",
+    "delay": false,
+    "xmin": -500.0,
+    "xmax": -460.0,
+    "ymin": 222.0,
+    "ymax": 222.0
+  },
+  {
+    "name": "D02Z03S17",
+    "door": "E",
+    "delay": false,
+    "xmin": -630.0,
+    "xmax": -600.0,
+    "ymin": 209.0,
+    "ymax": 209.0
+  },
+  {
+    "name": "D02Z03S18",
+    "door": "SE",
+    "delay": false,
+    "xmin": -620.0,
+    "xmax": -620.0,
+    "ymin": 232.0,
+    "ymax": 253.375
+  },
+  {
+    "name": "D02Z03S19",
+    "door": "E",
+    "delay": false,
+    "xmin": -492.0,
+    "xmax": -480.0,
+    "ymin": 274.0,
+    "ymax": 274.0
+  },
+  {
+    "name": "D02Z03S20",
+    "door": "W",
+    "delay": false,
+    "xmin": -535.0,
+    "xmax": -525.0,
+    "ymin": 253.625,
+    "ymax": 269.375
+  },
+  {
+    "name": "D02Z03S21",
+    "door": "W",
+    "delay": false,
+    "xmin": -502.0,
+    "xmax": -480.0,
+    "ymin": 254.0,
+    "ymax": 254.0
+  },
+  {
+    "name": "D02Z03S22",
+    "door": "W",
+    "delay": false,
+    "xmin": -435.9375,
+    "xmax": -435.9375,
+    "ymin": 278.03125,
+    "ymax": 278.03125
+  },
+  {
+    "name": "D02Z03S23",
+    "door": "E",
+    "delay": false,
+    "xmin": -658.96875,
+    "xmax": -638.96875,
+    "ymin": 255.0625,
+    "ymax": 255.0625
+  },
+  {
+    "name": "D02Z03S24",
+    "door": "E",
+    "delay": false,
+    "xmin": -600.0,
+    "xmax": -600.0,
+    "ymin": 219.0,
+    "ymax": 219.0
+  },
+  {
+    "name": "D03Z01S01",
+    "door": "W",
+    "delay": false,
+    "xmin": -520.0,
+    "xmax": -460.0,
+    "ymin": -33.375,
+    "ymax": -18.625
+  },
+  {
+    "name": "D03Z01S02",
+    "door": "W",
+    "delay": false,
+    "xmin": -620.0,
+    "xmax": -540.0,
+    "ymin": -36.96875,
+    "ymax": -26.625
+  },
+  {
+    "name": "D03Z01S03",
+    "door": "W",
+    "delay": false,
+    "xmin": -780.0,
+    "xmax": -660.0,
+    "ymin": -43.375,
+    "ymax": -35.625
+  },
+  {
+    "name": "D03Z01S04",
+    "door": "NW",
+    "delay": false,
+    "xmin": -820.0,
+    "xmax": -800.0,
+    "ymin": -43.375,
+    "ymax": -29.625
+  },
+  {
+    "name": "D03Z01S05",
+    "door": "W",
+    "delay": false,
+    "xmin": -840.0,
+    "xmax": -840.0,
+    "ymin": -29.34375,
+    "ymax": -29.34375
+  },
+  {
+    "name": "D03Z01S06",
+    "door": "W",
+    "delay": false,
+    "xmin": -641.0,
+    "xmax": -630.0,
+    "ymin": -29.40625,
+    "ymax": -29.40625
+  },
+  {
+    "name": "D03Z02S01",
+    "door": "W",
+    "delay": false,
+    "xmin": -680.0,
+    "xmax": -660.0,
+    "ymin": -75.375,
+    "ymax": -55.625
+  },
+  {
+    "name": "D03Z02S02",
+    "door": "W",
+    "delay": false,
+    "xmin": -740.0,
+    "xmax": -700.0,
+    "ymin": -76.375,
+    "ymax": -55.625
+  },
+  {
+    "name": "D03Z02S03",
+    "door": "SW",
+    "delay": false,
+    "xmin": -738.0,
+    "xmax": -700.0,
+    "ymin": -134.375,
+    "ymax": -87.59375
+  },
+  {
+    "name": "D03Z02S04",
+    "door": "NW",
+    "delay": false,
+    "xmin": -700.0,
+    "xmax": -680.0,
+    "ymin": -122.375,
+    "ymax": -109.625
+  },
+  {
+    "name": "D03Z02S05",
+    "door": "W",
+    "delay": false,
+    "xmin": -680.0,
+    "xmax": -660.0,
+    "ymin": -101.375,
+    "ymax": -84.625
+  },
+  {
+    "name": "D03Z02S06",
+    "door": "W",
+    "delay": false,
+    "xmin": -700.0,
+    "xmax": -680.0,
+    "ymin": -133.375,
+    "ymax": -130.625
+  },
+  {
+    "name": "D03Z02S07",
+    "door": "W",
+    "delay": false,
+    "xmin": -740.0,
+    "xmax": -740.0,
+    "ymin": -132.375,
+    "ymax": -109.125
+  },
+  {
+    "name": "D03Z02S08",
+    "door": "E",
+    "delay": false,
+    "xmin": -760.0,
+    "xmax": -760.0,
+    "ymin": -131.375,
+    "ymax": -109.625
+  },
+  {
+    "name": "D03Z02S09",
+    "door": "W",
+    "delay": false,
+    "xmin": -780.0,
+    "xmax": -760.0,
+    "ymin": -99.375,
+    "ymax": -76.625
+  },
+  {
+    "name": "D03Z02S10",
+    "door": "W",
+    "delay": false,
+    "xmin": -780.0,
+    "xmax": -760.0,
+    "ymin": -66.375,
+    "ymax": -54.625
+  },
+  {
+    "name": "D03Z02S11",
+    "door": "W",
+    "delay": false,
+    "xmin": -640.0,
+    "xmax": -580.0,
+    "ymin": -91.375,
+    "ymax": -80.625
+  },
+  {
+    "name": "D03Z02S12",
+    "door": "E",
+    "delay": false,
+    "xmin": -808.0,
+    "xmax": -800.0,
+    "ymin": -76.0,
+    "ymax": -76.0
+  },
+  {
+    "name": "D03Z02S13",
+    "door": "E",
+    "delay": false,
+    "xmin": -800.0,
+    "xmax": -800.0,
+    "ymin": -63.375,
+    "ymax": -53.625
+  },
+  {
+    "name": "D03Z02S14",
+    "door": "E",
+    "delay": false,
+    "xmin": -782.0,
+    "xmax": -780.0,
+    "ymin": -108.78125,
+    "ymax": -107.625
+  },
+  {
+    "name": "D03Z02S15",
+    "door": "W",
+    "delay": false,
+    "xmin": -560.0,
+    "xmax": -560.0,
+    "ymin": -88.0,
+    "ymax": -88.0
+  },
+  {
+    "name": "D03BZ01S01",
+    "door": "W",
+    "delay": false,
+    "xmin": -520.0,
+    "xmax": -520.0,
+    "ymin": -232.0,
+    "ymax": -225.5625
+  },
+  {
+    "name": "D03Z03S01",
+    "door": "W",
+    "delay": false,
+    "xmin": -720.0,
+    "xmax": -720.0,
+    "ymin": -174.375,
+    "ymax": -140.625
+  },
+  {
+    "name": "D03Z03S02",
+    "door": "W",
+    "delay": false,
+    "xmin": -680.0,
+    "xmax": -680.0,
+    "ymin": -209.375,
+    "ymax": -162.625
+  },
+  {
+    "name": "D03Z03S03",
+    "door": "SE",
+    "delay": false,
+    "xmin": -660.0,
+    "xmax": -660.0,
+    "ymin": -233.375,
+    "ymax": -194.625
+  },
+  {
+    "name": "D03Z03S04",
+    "door": "SW",
+    "delay": false,
+    "xmin": -640.0,
+    "xmax": -640.0,
+    "ymin": -234.375,
+    "ymax": -184.625
+  },
+  {
+    "name": "D03Z03S05",
+    "door": "SW",
+    "delay": false,
+    "xmin": -620.0,
+    "xmax": -620.0,
+    "ymin": -218.0,
+    "ymax": -186.0
+  },
+  {
+    "name": "D03Z03S06",
+    "door": "W",
+    "delay": false,
+    "xmin": -600.0,
+    "xmax": -600.0,
+    "ymin": -188.375,
+    "ymax": -155.625
+  },
+  {
+    "name": "D03Z03S07",
+    "door": "SW",
+    "delay": true,
+    "xmin": -600.0,
+    "xmax": -600.0,
+    "ymin": -236.375,
+    "ymax": -195.625
+  },
+  {
+    "name": "D03Z03S08",
+    "door": "W",
+    "delay": false,
+    "xmin": -580.0,
+    "xmax": -530.0,
+    "ymin": -194.375,
+    "ymax": -191.125
+  },
+  {
+    "name": "D03Z03S09",
+    "door": "SW",
+    "delay": false,
+    "xmin": -600.0,
+    "xmax": -600.0,
+    "ymin": -263.375,
+    "ymax": -249.625
+  },
+  {
+    "name": "D03Z03S10",
+    "door": "E",
+    "delay": false,
+    "xmin": -646.28125,
+    "xmax": -620.0,
+    "ymin": -262.78125,
+    "ymax": -262.78125
+  },
+  {
+    "name": "D03Z03S11",
+    "door": "W",
+    "delay": false,
+    "xmin": -580.0,
+    "xmax": -540.0,
+    "ymin": -232.0,
+    "ymax": -232.0
+  },
+  {
+    "name": "D03Z03S12",
+    "door": "W",
+    "delay": false,
+    "xmin": -700.0,
+    "xmax": -700.0,
+    "ymin": -175.0,
+    "ymax": -175.0
+  },
+  {
+    "name": "D03Z03S13",
+    "door": "W",
+    "delay": false,
+    "xmin": -620.0,
+    "xmax": -620.0,
+    "ymin": -231.65625,
+    "ymax": -231.65625
+  },
+  {
+    "name": "D03Z03S14",
+    "door": "W",
+    "delay": false,
+    "xmin": -660.0,
+    "xmax": -660.0,
+    "ymin": -166.0,
+    "ymax": -166.0
+  },
+  {
+    "name": "D03Z03S15",
+    "door": "W",
+    "delay": false,
+    "xmin": -520.0,
+    "xmax": -520.0,
+    "ymin": -232.0,
+    "ymax": -225.125
+  },
+  {
+    "name": "D03Z03S16",
+    "door": "W",
+    "delay": false,
+    "xmin": -502.0,
+    "xmax": -480.0,
+    "ymin": -232.0,
+    "ymax": -232.0
+  },
+  {
+    "name": "D03Z03S17",
+    "door": "W",
+    "delay": false,
+    "xmin": -460.0,
+    "xmax": -460.0,
+    "ymin": -230.0,
+    "ymax": -230.0
+  },
+  {
+    "name": "D03Z03S18",
+    "door": "E",
+    "delay": false,
+    "xmin": -744.0,
+    "xmax": -744.0,
+    "ymin": -168.0,
+    "ymax": -168.0
+  },
+  {
+    "name": "D03Z03S19",
+    "door": "E",
+    "delay": false,
+    "xmin": -620.0,
+    "xmax": -620.0,
+    "ymin": -198.0,
+    "ymax": -198.0
+  },
+  {
+    "name": "D04Z01S01",
+    "door": "W",
+    "delay": false,
+    "xmin": 20.0,
+    "xmax": 60.0,
+    "ymin": 21.625,
+    "ymax": 36.375
+  },
+  {
+    "name": "D04Z01S02",
+    "door": "W",
+    "delay": false,
+    "xmin": 80.0,
+    "xmax": 120.0,
+    "ymin": 21.625,
+    "ymax": 34.375
+  },
+  {
+    "name": "D04Z01S03",
+    "door": "W",
+    "delay": false,
+    "xmin": 140.0,
+    "xmax": 180.0,
+    "ymin": 21.625,
+    "ymax": 33.375
+  },
+  {
+    "name": "D04Z01S04",
+    "door": "W",
+    "delay": false,
+    "xmin": 200.0,
+    "xmax": 220.0,
+    "ymin": 21.625,
+    "ymax": 22.375
+  },
+  {
+    "name": "D04Z01S05",
+    "door": "S",
+    "delay": false,
+    "xmin": 60.0,
+    "xmax": 60.0,
+    "ymin": 43.625,
+    "ymax": 67.375
+  },
+  {
+    "name": "D04Z01S06",
+    "door": "S",
+    "delay": false,
+    "xmin": 60.0,
+    "xmax": 60.0,
+    "ymin": 76.625,
+    "ymax": 83.875
+  },
+  {
+    "name": "D04BZ02S01",
+    "door": "Redento",
+    "delay": false,
+    "xmin": 559.0,
+    "xmax": 559.0,
+    "ymin": 65.3125,
+    "ymax": 65.3125
+  },
+  {
+    "name": "D04BZ03S01",
+    "door": "E",
+    "delay": false,
+    "xmin": 207.0,
+    "xmax": 280.0,
+    "ymin": 67.0,
+    "ymax": 67.0
+  },
+  {
+    "name": "D04Z02S01",
+    "door": "W",
+    "delay": false,
+    "xmin": 240.0,
+    "xmax": 300.0,
+    "ymin": 22.625,
+    "ymax": 33.375
+  },
+  {
+    "name": "D04Z02S02",
+    "door": "SE",
+    "delay": false,
+    "xmin": 240.0,
+    "xmax": 240.0,
+    "ymin": 44.625,
+    "ymax": 66.0
+  },
+  {
+    "name": "D04Z02S03",
+    "door": "W",
+    "delay": false,
+    "xmin": 320.0,
+    "xmax": 380.0,
+    "ymin": 33.0,
+    "ymax": 33.0
+  },
+  {
+    "name": "D04Z02S04",
+    "door": "SW",
+    "delay": true,
+    "xmin": 400.0,
+    "xmax": 400.0,
+    "ymin": 11.625,
+    "ymax": 33.375
+  },
+  {
+    "name": "D04Z02S05",
+    "door": "W",
+    "delay": false,
+    "xmin": 420.0,
+    "xmax": 480.0,
+    "ymin": 21.0,
+    "ymax": 21.0
+  },
+  {
+    "name": "D04Z02S06",
+    "door": "NW",
+    "delay": false,
+    "xmin": 400.0,
+    "xmax": 400.0,
+    "ymin": 43.625,
+    "ymax": 70.375
+  },
+  {
+    "name": "D04Z02S07",
+    "door": "SW",
+    "delay": true,
+    "xmin": 500.0,
+    "xmax": 532.0,
+    "ymin": 21.625,
+    "ymax": 54.375
+  },
+  {
+    "name": "D04Z02S08",
+    "door": "W",
+    "delay": false,
+    "xmin": 500.0,
+    "xmax": 542.0,
+    "ymin": 68.0,
+    "ymax": 68.0
+  },
+  {
+    "name": "D04Z02S09",
+    "door": "W",
+    "delay": false,
+    "xmin": 420.0,
+    "xmax": 480.0,
+    "ymin": 68.0,
+    "ymax": 80.375
+  },
+  {
+    "name": "D04Z02S10",
+    "door": "W",
+    "delay": false,
+    "xmin": 399.0,
+    "xmax": 418.0,
+    "ymin": 46.0,
+    "ymax": 46.0
+  },
+  {
+    "name": "D04Z02S11",
+    "door": "W",
+    "delay": false,
+    "xmin": 360.0,
+    "xmax": 380.0,
+    "ymin": 43.625,
+    "ymax": 66.375
+  },
+  {
+    "name": "D04Z02S12",
+    "door": "W",
+    "delay": false,
+    "xmin": 358.0,
+    "xmax": 358.0,
+    "ymin": 79.0,
+    "ymax": 79.0
+  },
+  {
+    "name": "D04Z02S13",
+    "door": "W",
+    "delay": false,
+    "xmin": 560.0,
+    "xmax": 560.0,
+    "ymin": 57.0,
+    "ymax": 57.0
+  },
+  {
+    "name": "D04Z02S14",
+    "door": "E",
+    "delay": false,
+    "xmin": 380.0,
+    "xmax": 380.0,
+    "ymin": 12.0,
+    "ymax": 12.0
+  },
+  {
+    "name": "D04Z02S15",
+    "door": "W",
+    "delay": false,
+    "xmin": 260.0,
+    "xmax": 280.0,
+    "ymin": 66.59375,
+    "ymax": 66.59375
+  },
+  {
+    "name": "D04Z02S16",
+    "door": "W",
+    "delay": false,
+    "xmin": 500.0,
+    "xmax": 500.0,
+    "ymin": 78.0,
+    "ymax": 110.375
+  },
+  {
+    "name": "D04Z02S17",
+    "door": "W",
+    "delay": false,
+    "xmin": 260.0,
+    "xmax": 260.0,
+    "ymin": 46.0,
+    "ymax": 46.0
+  },
+  {
+    "name": "D04Z02S19",
+    "door": "W",
+    "delay": false,
+    "xmin": 420.0,
+    "xmax": 480.0,
+    "ymin": 34.0,
+    "ymax": 34.0
+  },
+  {
+    "name": "D04Z02S20",
+    "door": "W",
+    "delay": false,
+    "xmin": 560.0,
+    "xmax": 560.0,
+    "ymin": 68.0,
+    "ymax": 68.0
+  },
+  {
+    "name": "D04Z02S21",
+    "door": "W",
+    "delay": false,
+    "xmin": 340.0,
+    "xmax": 340.0,
+    "ymin": 55.625,
+    "ymax": 78.375
+  },
+  {
+    "name": "D04Z02S22",
+    "door": "W",
+    "delay": false,
+    "xmin": 302.0,
+    "xmax": 320.0,
+    "ymin": 67.625,
+    "ymax": 68.4375
+  },
+  {
+    "name": "D04Z02S23",
+    "door": "W",
+    "delay": false,
+    "xmin": 560.0,
+    "xmax": 560.0,
+    "ymin": 11.125,
+    "ymax": 22.0
+  },
+  {
+    "name": "D04Z02S24",
+    "door": "SW",
+    "delay": false,
+    "xmin": 579.0,
+    "xmax": 579.0,
+    "ymin": -167.0,
+    "ymax": 14.375
+  },
+  {
+    "name": "D04Z02S25",
+    "door": "W",
+    "delay": false,
+    "xmin": 597.90625,
+    "xmax": 597.90625,
+    "ymin": -163.0,
+    "ymax": -163.0
+  },
+  {
+    "name": "D04Z03S01",
+    "door": "W",
+    "delay": false,
+    "xmin": 320.0,
+    "xmax": 380.0,
+    "ymin": 23.0,
+    "ymax": 23.0
+  },
+  {
+    "name": "D04Z03S02",
+    "door": "W",
+    "delay": false,
+    "xmin": 340.0,
+    "xmax": 358.0,
+    "ymin": 11.0,
+    "ymax": 11.0
+  },
+  {
+    "name": "D04Z04S01",
+    "door": "W",
+    "delay": false,
+    "xmin": 580.0,
+    "xmax": 620.0,
+    "ymin": 23.0,
+    "ymax": 23.0
+  },
+  {
+    "name": "D04Z04S02",
+    "door": "W",
+    "delay": false,
+    "xmin": 640.0,
+    "xmax": 640.0,
+    "ymin": 23.0,
+    "ymax": 23.0
+  },
+  {
+    "name": "D05BZ01S01",
+    "door": "FrontalS",
+    "delay": true,
+    "xmin": 320.0,
+    "xmax": 320.0,
+    "ymin": 0.125,
+    "ymax": 11.0
+  },
+  {
+    "name": "D05Z01S01",
+    "door": "W",
+    "delay": false,
+    "xmin": 420.0,
+    "xmax": 420.0,
+    "ymin": -12.375,
+    "ymax": 13.375
+  },
+  {
+    "name": "D05Z01S02",
+    "door": "W",
+    "delay": true,
+    "xmin": 380.0,
+    "xmax": 400.0,
+    "ymin": -11.375,
+    "ymax": -0.625
+  },
+  {
+    "name": "D05Z01S03",
+    "door": "W",
+    "delay": false,
+    "xmin": 320.0,
+    "xmax": 360.0,
+    "ymin": -1.0,
+    "ymax": -1.0
+  },
+  {
+    "name": "D05Z01S04",
+    "door": "W",
+    "delay": false,
+    "xmin": 280.0,
+    "xmax": 298.0,
+    "ymin": -11.375,
+    "ymax": 0.375
+  },
+  {
+    "name": "D05Z01S05",
+    "door": "SW",
+    "delay": true,
+    "xmin": 260.0,
+    "xmax": 260.0,
+    "ymin": -32.375,
+    "ymax": 10.375
+  },
+  {
+    "name": "D05Z01S06",
+    "door": "W",
+    "delay": true,
+    "xmin": 100.0,
+    "xmax": 140.0,
+    "ymin": -21.0,
+    "ymax": -21.0
+  },
+  {
+    "name": "D05Z01S07",
+    "door": "SW",
+    "delay": false,
+    "xmin": 180.0,
+    "xmax": 240.0,
+    "ymin": -32.375,
+    "ymax": -21.625
+  },
+  {
+    "name": "D05Z01S08",
+    "door": "W",
+    "delay": true,
+    "xmin": 160.0,
+    "xmax": 160.0,
+    "ymin": -65.375,
+    "ymax": -32.625
+  },
+  {
+    "name": "D05Z01S09",
+    "door": "W",
+    "delay": true,
+    "xmin": 180.0,
+    "xmax": 180.0,
+    "ymin": -64.0,
+    "ymax": -64.0
+  },
+  {
+    "name": "D05Z01S10",
+    "door": "W",
+    "delay": false,
+    "xmin": 120.0,
+    "xmax": 140.0,
+    "ymin": -63.375,
+    "ymax": -53.625
+  },
+  {
+    "name": "D05Z01S11",
+    "door": "SW",
+    "delay": true,
+    "xmin": 100.0,
+    "xmax": 100.0,
+    "ymin": -97.375,
+    "ymax": -54.625
+  },
+  {
+    "name": "D05Z01S12",
+    "door": "E",
+    "delay": false,
+    "xmin": 140.0,
+    "xmax": 140.0,
+    "ymin": -30.8125,
+    "ymax": -30.8125
+  },
+  {
+    "name": "D05Z01S13",
+    "door": "E",
+    "delay": false,
+    "xmin": 322.0,
+    "xmax": 322.0,
+    "ymin": -9.0,
+    "ymax": -9.0
+  },
+  {
+    "name": "D05Z01S14",
+    "door": "W",
+    "delay": false,
+    "xmin": 180.0,
+    "xmax": 180.0,
+    "ymin": -43.03125,
+    "ymax": -43.03125
+  },
+  {
+    "name": "D05Z01S15",
+    "door": "E",
+    "delay": false,
+    "xmin": 360.0,
+    "xmax": 360.0,
+    "ymin": -10.0,
+    "ymax": -10.0
+  },
+  {
+    "name": "D05Z01S16",
+    "door": "W",
+    "delay": false,
+    "xmin": 440.0,
+    "xmax": 440.0,
+    "ymin": -11.0,
+    "ymax": -11.0
+  },
+  {
+    "name": "D05Z01S17",
+    "door": "W",
+    "delay": false,
+    "xmin": 280.0,
+    "xmax": 280.0,
+    "ymin": 14.0,
+    "ymax": 14.0
+  },
+  {
+    "name": "D05Z01S18",
+    "door": "W",
+    "delay": false,
+    "xmin": 200.0,
+    "xmax": 200.0,
+    "ymin": -64.0,
+    "ymax": -64.0
+  },
+  {
+    "name": "D05Z01S19",
+    "door": "W",
+    "delay": false,
+    "xmin": 81.0,
+    "xmax": 81.0,
+    "ymin": -97.5625,
+    "ymax": -97.5625
+  },
+  {
+    "name": "D05Z01S20",
+    "door": "W",
+    "delay": false,
+    "xmin": 160.0,
+    "xmax": 160.0,
+    "ymin": -21.375,
+    "ymax": 13.375
+  },
+  {
+    "name": "D05Z01S21",
+    "door": "SW",
+    "delay": false,
+    "xmin": 340.0,
+    "xmax": 340.0,
+    "ymin": -88.375,
+    "ymax": -10.625
+  },
+  {
+    "name": "D05Z01S22",
+    "door": "FrontalN",
+    "delay": false,
+    "xmin": 320.0,
+    "xmax": 320.0,
+    "ymin": 11.0,
+    "ymax": 11.0
+  },
+  {
+    "name": "D05Z01S23",
+    "door": "E",
+    "delay": false,
+    "xmin": 80.0,
+    "xmax": 80.0,
+    "ymin": -53.0,
+    "ymax": -53.0
+  },
+  {
+    "name": "D05Z01S24",
+    "door": "E",
+    "delay": false,
+    "xmin": 80.0,
+    "xmax": 80.0,
+    "ymin": -22.0,
+    "ymax": -22.0
+  },
+  {
+    "name": "D05BZ02S01",
+    "door": "C",
+    "delay": false,
+    "xmin": 0.0,
+    "xmax": 0.0,
+    "ymin": 2.0,
+    "ymax": 2.0
+  },
+  {
+    "name": "D05Z02S01",
+    "door": "W",
+    "delay": false,
+    "xmin": 120.0,
+    "xmax": 160.0,
+    "ymin": -98.0,
+    "ymax": -98.0
+  },
+  {
+    "name": "D05Z02S02",
+    "door": "SW",
+    "delay": false,
+    "xmin": 180.0,
+    "xmax": 180.0,
+    "ymin": -110.375,
+    "ymax": -97.625
+  },
+  {
+    "name": "D05Z02S03",
+    "door": "W",
+    "delay": false,
+    "xmin": 120.0,
+    "xmax": 160.0,
+    "ymin": -111.0,
+    "ymax": -111.0
+  },
+  {
+    "name": "D05Z02S04",
+    "door": "W",
+    "delay": false,
+    "xmin": 100.0,
+    "xmax": 100.0,
+    "ymin": -110.0,
+    "ymax": -110.0
+  },
+  {
+    "name": "D05Z02S05",
+    "door": "W",
+    "delay": false,
+    "xmin": 200.0,
+    "xmax": 240.0,
+    "ymin": -98.0,
+    "ymax": -98.0
+  },
+  {
+    "name": "D05Z02S06",
+    "door": "SW",
+    "delay": false,
+    "xmin": 260.0,
+    "xmax": 279.0,
+    "ymin": -98.375,
+    "ymax": -84.625
+  },
+  {
+    "name": "D05Z02S07",
+    "door": "W",
+    "delay": false,
+    "xmin": 240.0,
+    "xmax": 240.0,
+    "ymin": -86.0,
+    "ymax": -86.0
+  },
+  {
+    "name": "D05Z02S08",
+    "door": "W",
+    "delay": false,
+    "xmin": 220.0,
+    "xmax": 220.0,
+    "ymin": -110.5625,
+    "ymax": -110.5625
+  },
+  {
+    "name": "D05Z02S09",
+    "door": "W",
+    "delay": true,
+    "xmin": 200.0,
+    "xmax": 200.0,
+    "ymin": -110.0,
+    "ymax": -110.0
+  },
+  {
+    "name": "D05Z02S10",
+    "door": "W",
+    "delay": true,
+    "xmin": 220.0,
+    "xmax": 220.0,
+    "ymin": -86.0,
+    "ymax": -86.0
+  },
+  {
+    "name": "D05Z02S11",
+    "door": "W",
+    "delay": false,
+    "xmin": 301.0,
+    "xmax": 338.0,
+    "ymin": -99.0,
+    "ymax": -99.0
+  },
+  {
+    "name": "D05Z02S12",
+    "door": "W",
+    "delay": false,
+    "xmin": 40.0,
+    "xmax": 80.0,
+    "ymin": -110.0,
+    "ymax": -106.3125
+  },
+  {
+    "name": "D05Z02S13",
+    "door": "E",
+    "delay": false,
+    "xmin": 200.0,
+    "xmax": 200.0,
+    "ymin": -86.0,
+    "ymax": -86.0
+  },
+  {
+    "name": "D05Z02S14",
+    "door": "W",
+    "delay": false,
+    "xmin": 300.0,
+    "xmax": 320.0,
+    "ymin": -87.5,
+    "ymax": -87.5
+  },
+  {
+    "name": "D05Z02S15",
+    "door": "S",
+    "delay": false,
+    "xmin": 39.0,
+    "xmax": 61.0,
+    "ymin": -97.0,
+    "ymax": -97.0
+  },
+  {
+    "name": "D06Z01S01",
+    "door": "SW",
+    "delay": false,
+    "xmin": 400.0,
+    "xmax": 400.0,
+    "ymin": 96.625,
+    "ymax": 197.78125
+  },
+  {
+    "name": "D06Z01S02",
+    "door": "W",
+    "delay": false,
+    "xmin": 240.0,
+    "xmax": 260.0,
+    "ymin": 77.0,
+    "ymax": 77.0
+  },
+  {
+    "name": "D06Z01S03",
+    "door": "W",
+    "delay": false,
+    "xmin": 420.0,
+    "xmax": 420.0,
+    "ymin": 98.0,
+    "ymax": 98.0
+  },
+  {
+    "name": "D06Z01S04",
+    "door": "SW",
+    "delay": false,
+    "xmin": 440.0,
+    "xmax": 440.0,
+    "ymin": 86.0,
+    "ymax": 132.375
+  },
+  {
+    "name": "D06Z01S05",
+    "door": "E",
+    "delay": false,
+    "xmin": 322.0,
+    "xmax": 322.0,
+    "ymin": 177.0,
+    "ymax": 177.0
+  },
+  {
+    "name": "D06Z01S06",
+    "door": "WW",
+    "delay": false,
+    "xmin": 420.0,
+    "xmax": 460.0,
+    "ymin": 131.0,
+    "ymax": 131.0
+  },
+  {
+    "name": "D06Z01S07",
+    "door": "W",
+    "delay": false,
+    "xmin": 360.0,
+    "xmax": 380.0,
+    "ymin": 133.0,
+    "ymax": 133.0
+  },
+  {
+    "name": "D06Z01S08",
+    "door": "W",
+    "delay": false,
+    "xmin": 280.0,
+    "xmax": 280.0,
+    "ymin": 77.125,
+    "ymax": 120.59375
+  },
+  {
+    "name": "D06Z01S09",
+    "door": "W",
+    "delay": false,
+    "xmin": 360.0,
+    "xmax": 380.0,
+    "ymin": 176.0,
+    "ymax": 176.0
+  },
+  {
+    "name": "D06Z01S10",
+    "door": "W",
+    "delay": false,
+    "xmin": 420.0,
+    "xmax": 440.0,
+    "ymin": 176.0,
+    "ymax": 176.0
+  },
+  {
+    "name": "D06Z01S11",
+    "door": "W",
+    "delay": false,
+    "xmin": 500.0,
+    "xmax": 500.0,
+    "ymin": 176.0,
+    "ymax": 176.0
+  },
+  {
+    "name": "D06Z01S12",
+    "door": "W",
+    "delay": false,
+    "xmin": 340.0,
+    "xmax": 340.0,
+    "ymin": 110.03125,
+    "ymax": 176.0
+  },
+  {
+    "name": "D06Z01S13",
+    "door": "W",
+    "delay": false,
+    "xmin": 240.0,
+    "xmax": 320.0,
+    "ymin": 131.5,
+    "ymax": 131.5
+  },
+  {
+    "name": "D06Z01S14",
+    "door": "W",
+    "delay": false,
+    "xmin": 300.0,
+    "xmax": 380.0,
+    "ymin": 99.0,
+    "ymax": 99.0
+  },
+  {
+    "name": "D06Z01S15",
+    "door": "SW",
+    "delay": false,
+    "xmin": 480.0,
+    "xmax": 480.0,
+    "ymin": 131.03125,
+    "ymax": 174.375
+  },
+  {
+    "name": "D06Z01S16",
+    "door": "W",
+    "delay": false,
+    "xmin": 360.0,
+    "xmax": 380.0,
+    "ymin": 165.0,
+    "ymax": 165.0
+  },
+  {
+    "name": "D06Z01S17",
+    "door": "W",
+    "delay": true,
+    "xmin": 420.0,
+    "xmax": 440.0,
+    "ymin": 164.0,
+    "ymax": 164.0
+  },
+  {
+    "name": "D06Z01S18",
+    "door": "E",
+    "delay": false,
+    "xmin": 213.0,
+    "xmax": 230.0,
+    "ymin": 77.0,
+    "ymax": 77.0
+  },
+  {
+    "name": "D06Z01S19",
+    "door": "E",
+    "delay": false,
+    "xmin": 400.0,
+    "xmax": 400.0,
+    "ymin": 209.0,
+    "ymax": 209.0
+  },
+  {
+    "name": "D06Z01S20",
+    "door": "W",
+    "delay": false,
+    "xmin": 420.0,
+    "xmax": 420.0,
+    "ymin": 85.0,
+    "ymax": 85.0
+  },
+  {
+    "name": "D06Z01S21",
+    "door": "W",
+    "delay": false,
+    "xmin": 460.0,
+    "xmax": 460.0,
+    "ymin": 174.0,
+    "ymax": 174.0
+  },
+  {
+    "name": "D06Z01S22",
+    "door": "Sword",
+    "delay": false,
+    "xmin": 380.0,
+    "xmax": 380.0,
+    "ymin": 86.0,
+    "ymax": 86.0
+  },
+  {
+    "name": "D06Z01S23",
+    "door": "Sword",
+    "delay": false,
+    "xmin": 400.0,
+    "xmax": 400.0,
+    "ymin": 79.625,
+    "ymax": 87.375
+  },
+  {
+    "name": "D06Z01S24",
+    "door": "W",
+    "delay": false,
+    "xmin": 459.0,
+    "xmax": 459.0,
+    "ymin": 120.96875,
+    "ymax": 120.96875
+  },
+  {
+    "name": "D06Z01S25",
+    "door": "W",
+    "delay": false,
+    "xmin": 420.0,
+    "xmax": 436.0,
+    "ymin": 210.0,
+    "ymax": 210.0
+  },
+  {
+    "name": "D06Z01S26",
+    "door": "W",
+    "delay": false,
+    "xmin": 460.0,
+    "xmax": 460.0,
+    "ymin": 165.0,
+    "ymax": 165.0
+  },
+  {
+    "name": "D07Z01S01",
+    "door": "W",
+    "delay": false,
+    "xmin": 460.0,
+    "xmax": 552.09375,
+    "ymin": 207.625,
+    "ymax": 230.375
+  },
+  {
+    "name": "D07Z01S02",
+    "door": "W",
+    "delay": false,
+    "xmin": 580.0,
+    "xmax": 620.0,
+    "ymin": 230.0,
+    "ymax": 230.875
+  },
+  {
+    "name": "D07Z01S03",
+    "door": "W",
+    "delay": false,
+    "xmin": 640.0,
+    "xmax": 701.0,
+    "ymin": 231.625,
+    "ymax": 255.75
+  },
+  {
+    "name": "D07Z01S05",
+    "door": "",
+    "delay": false,
+    "xmin": 602.5,
+    "xmax": 602.5,
+    "ymin": 231.25,
+    "ymax": 233.15625
+  },
+  {
+    "name": "D08Z01S01",
+    "door": "W",
+    "delay": false,
+    "xmin": -98.0,
+    "xmax": -19.0,
+    "ymin": 5.625,
+    "ymax": 12.09375
+  },
+  {
+    "name": "D08Z01S02",
+    "door": "SE",
+    "delay": false,
+    "xmin": -28.0,
+    "xmax": -20.0,
+    "ymin": 43.125,
+    "ymax": 75.875
+  },
+  {
+    "name": "D08Z02S01",
+    "door": "W",
+    "delay": false,
+    "xmin": 0.0,
+    "xmax": 0.0,
+    "ymin": 9.625,
+    "ymax": 34.375
+  },
+  {
+    "name": "D08Z02S02",
+    "door": "W",
+    "delay": false,
+    "xmin": 24.03125,
+    "xmax": 24.03125,
+    "ymin": 22.0,
+    "ymax": 22.0
+  },
+  {
+    "name": "D08Z02S03",
+    "door": "W",
+    "delay": false,
+    "xmin": 0.0,
+    "xmax": 0.0,
+    "ymin": 43.0,
+    "ymax": 43.0
+  },
+  {
+    "name": "D08Z03S01",
+    "door": "W",
+    "delay": false,
+    "xmin": 20.0,
+    "xmax": 40.0,
+    "ymin": 44.0,
+    "ymax": 44.0
+  },
+  {
+    "name": "D08Z03S02",
+    "door": "SW",
+    "delay": false,
+    "xmin": 40.0,
+    "xmax": 40.0,
+    "ymin": 44.125,
+    "ymax": 74.875
+  },
+  {
+    "name": "D08Z03S03",
+    "door": "W",
+    "delay": false,
+    "xmin": -20.0,
+    "xmax": 20.0,
+    "ymin": 79.0,
+    "ymax": 79.0
+  },
+  {
+    "name": "D09BZ01S01",
+    "door": "Cell11",
+    "delay": true,
+    "xmin": 38.0,
+    "xmax": 233.0,
+    "ymin": 86.65625,
+    "ymax": 149.625
+  },
+  {
+    "name": "D09Z01S01",
+    "door": "W",
+    "delay": false,
+    "xmin": 160.0,
+    "xmax": 220.0,
+    "ymin": 133.28125,
+    "ymax": 133.28125
+  },
+  {
+    "name": "D09Z01S02",
+    "door": "SW",
+    "delay": false,
+    "xmin": 140.0,
+    "xmax": 174.0,
+    "ymin": 107.625,
+    "ymax": 123.375
+  },
+  {
+    "name": "D09Z01S03",
+    "door": "W",
+    "delay": false,
+    "xmin": 40.0,
+    "xmax": 40.0,
+    "ymin": 109.0,
+    "ymax": 109.0
+  },
+  {
+    "name": "D09Z01S04",
+    "door": "W",
+    "delay": false,
+    "xmin": 120.0,
+    "xmax": 120.0,
+    "ymin": 133.15625,
+    "ymax": 133.15625
+  },
+  {
+    "name": "D09Z01S05",
+    "door": "W",
+    "delay": false,
+    "xmin": 20.0,
+    "xmax": 20.0,
+    "ymin": 115.625,
+    "ymax": 123.375
+  },
+  {
+    "name": "D09Z01S06",
+    "door": "E",
+    "delay": false,
+    "xmin": 92.0,
+    "xmax": 100.0,
+    "ymin": 132.0,
+    "ymax": 132.0
+  },
+  {
+    "name": "D09Z01S07",
+    "door": "W",
+    "delay": false,
+    "xmin": 119.96875,
+    "xmax": 119.96875,
+    "ymin": 88.03125,
+    "ymax": 121.0
+  },
+  {
+    "name": "D09Z01S08",
+    "door": "W",
+    "delay": false,
+    "xmin": 40.0,
+    "xmax": 99.8125,
+    "ymin": 107.625,
+    "ymax": 123.375
+  },
+  {
+    "name": "D09Z01S09",
+    "door": "SW",
+    "delay": true,
+    "xmin": 80.0,
+    "xmax": 100.0,
+    "ymin": 86.625,
+    "ymax": 101.375
+  },
+  {
+    "name": "D09Z01S10",
+    "door": "W",
+    "delay": true,
+    "xmin": 140.0,
+    "xmax": 180.0,
+    "ymin": 87.625,
+    "ymax": 102.375
+  },
+  {
+    "name": "D09Z01S11",
+    "door": "W",
+    "delay": false,
+    "xmin": 139.96875,
+    "xmax": 139.96875,
+    "ymin": 132.5625,
+    "ymax": 132.5625
+  },
+  {
+    "name": "D09Z01S12",
+    "door": "E",
+    "delay": false,
+    "xmin": 59.0,
+    "xmax": 59.0,
+    "ymin": 100.0625,
+    "ymax": 100.0625
+  },
+  {
+    "name": "D09Z01S13",
+    "door": "E",
+    "delay": false,
+    "xmin": 0.0,
+    "xmax": 0.0,
+    "ymin": 124.0,
+    "ymax": 124.0
+  },
+  {
+    "name": "D17BZ01S01",
+    "door": "relic",
+    "delay": false,
+    "xmin": -28.0,
+    "xmax": -28.0,
+    "ymin": 3.0,
+    "ymax": 3.0
+  },
+  {
+    "name": "D17BZ02S01",
+    "door": "FrontR",
+    "delay": false,
+    "xmin": -901.0,
+    "xmax": -841.0,
+    "ymin": -23.375,
+    "ymax": 5.375
+  },
+  {
+    "name": "D17Z01S01",
+    "door": "E",
+    "delay": false,
+    "xmin": -996.0,
+    "xmax": -960.0,
+    "ymin": 11.0,
+    "ymax": 38.375
+  },
+  {
+    "name": "D17Z01S02",
+    "door": "W",
+    "delay": false,
+    "xmin": -940.0,
+    "xmax": -900.0,
+    "ymin": 10.0,
+    "ymax": 10.0
+  },
+  {
+    "name": "D17Z01S03",
+    "door": "W",
+    "delay": false,
+    "xmin": -780.0,
+    "xmax": -780.0,
+    "ymin": 12.0,
+    "ymax": 12.0
+  },
+  {
+    "name": "D17Z01S04",
+    "door": "W",
+    "delay": false,
+    "xmin": -860.0,
+    "xmax": -838.0,
+    "ymin": -1.0,
+    "ymax": -1.0
+  },
+  {
+    "name": "D17Z01S05",
+    "door": "W",
+    "delay": false,
+    "xmin": -866.0,
+    "xmax": -840.0,
+    "ymin": 12.0,
+    "ymax": 13.375
+  },
+  {
+    "name": "D17Z01S06",
+    "door": "E",
+    "delay": false,
+    "xmin": -880.0,
+    "xmax": -880.0,
+    "ymin": -19.0,
+    "ymax": -19.0
+  },
+  {
+    "name": "D17Z01S07",
+    "door": "SW",
+    "delay": false,
+    "xmin": -860.0,
+    "xmax": -860.0,
+    "ymin": -33.375,
+    "ymax": -10.625
+  },
+  {
+    "name": "D17Z01S08",
+    "door": "E",
+    "delay": false,
+    "xmin": -880.03125,
+    "xmax": -880.03125,
+    "ymin": -30.34375,
+    "ymax": -30.34375
+  },
+  {
+    "name": "D17Z01S09",
+    "door": "E",
+    "delay": false,
+    "xmin": -880.0,
+    "xmax": -880.0,
+    "ymin": -9.0,
+    "ymax": -9.0
+  },
+  {
+    "name": "D17Z01S10",
+    "door": "W",
+    "delay": false,
+    "xmin": -900.0,
+    "xmax": -900.0,
+    "ymin": 21.75,
+    "ymax": 43.5
+  },
+  {
+    "name": "D17Z01S11",
+    "door": "W",
+    "delay": false,
+    "xmin": -820.0,
+    "xmax": -800.0,
+    "ymin": 13.5,
+    "ymax": 13.5
+  },
+  {
+    "name": "D17Z01S12",
+    "door": "E",
+    "delay": false,
+    "xmin": -880.0,
+    "xmax": -880.0,
+    "ymin": 0.0,
+    "ymax": 0.0
+  },
+  {
+    "name": "D17Z01S13",
+    "door": "W",
+    "delay": false,
+    "xmin": -920.0,
+    "xmax": -920.0,
+    "ymin": 47.5,
+    "ymax": 47.5
+  },
+  {
+    "name": "D17Z01S14",
+    "door": "W",
+    "delay": false,
+    "xmin": -1000.0,
+    "xmax": -940.0,
+    "ymin": 42.625,
+    "ymax": 47.375
+  },
+  {
+    "name": "D17Z01S15",
+    "door": "E",
+    "delay": false,
+    "xmin": -1040.0,
+    "xmax": -1020.0,
+    "ymin": 44.625,
+    "ymax": 44.625
+  },
+  {
+    "name": "D20Z01S01",
+    "door": "W",
+    "delay": false,
+    "xmin": -540.0,
+    "xmax": -500.0,
+    "ymin": -89.0,
+    "ymax": -89.0
+  },
+  {
+    "name": "D20Z01S02",
+    "door": "W",
+    "delay": false,
+    "xmin": -480.0,
+    "xmax": -480.0,
+    "ymin": -87.375,
+    "ymax": -65.625
+  },
+  {
+    "name": "D20Z01S03",
+    "door": "W",
+    "delay": false,
+    "xmin": -460.0,
+    "xmax": -460.0,
+    "ymin": -65.375,
+    "ymax": -43.625
+  },
+  {
+    "name": "D20Z01S04",
+    "door": "W",
+    "delay": false,
+    "xmin": -500.0,
+    "xmax": -500.0,
+    "ymin": -109.375,
+    "ymax": -98.625
+  },
+  {
+    "name": "D20Z01S05",
+    "door": "W",
+    "delay": false,
+    "xmin": -520.0,
+    "xmax": -520.0,
+    "ymin": -109.375,
+    "ymax": -109.375
+  },
+  {
+    "name": "D20Z01S06",
+    "door": "SE",
+    "delay": false,
+    "xmin": -540.0,
+    "xmax": -540.0,
+    "ymin": -132.0,
+    "ymax": -110.0
+  },
+  {
+    "name": "D20Z01S07",
+    "door": "SE",
+    "delay": false,
+    "xmin": -520.0,
+    "xmax": -520.0,
+    "ymin": -154.375,
+    "ymax": -132.125
+  },
+  {
+    "name": "D20Z01S08",
+    "door": "W",
+    "delay": false,
+    "xmin": -499.0,
+    "xmax": -499.0,
+    "ymin": -132.0,
+    "ymax": -132.0
+  },
+  {
+    "name": "D20Z01S09",
+    "door": "W",
+    "delay": false,
+    "xmin": -500.0,
+    "xmax": -460.0,
+    "ymin": -154.0,
+    "ymax": -151.0
+  },
+  {
+    "name": "D20Z01S10",
+    "door": "W",
+    "delay": false,
+    "xmin": -420.0,
+    "xmax": -380.0,
+    "ymin": -154.0,
+    "ymax": -150.0
+  },
+  {
+    "name": "D20Z01S11",
+    "door": "W",
+    "delay": true,
+    "xmin": -360.0,
+    "xmax": -360.0,
+    "ymin": -164.875,
+    "ymax": -143.125
+  },
+  {
+    "name": "D20Z01S12",
+    "door": "E",
+    "delay": false,
+    "xmin": -380.15625,
+    "xmax": -380.15625,
+    "ymin": -142.6875,
+    "ymax": -142.6875
+  },
+  {
+    "name": "D20Z01S13",
+    "door": "W",
+    "delay": false,
+    "xmin": -340.0,
+    "xmax": -300.0,
+    "ymin": -143.0,
+    "ymax": -143.0
+  },
+  {
+    "name": "D20Z01S14",
+    "door": "S",
+    "delay": false,
+    "xmin": -320.0,
+    "xmax": -320.0,
+    "ymin": -132.0,
+    "ymax": -109.125
+  },
+  {
+    "name": "D20Z02S01",
+    "door": "W",
+    "delay": false,
+    "xmin": 520.0,
+    "xmax": 560.0,
+    "ymin": -164.0,
+    "ymax": -152.65625
+  },
+  {
+    "name": "D20Z02S02",
+    "door": "W",
+    "delay": false,
+    "xmin": 520.0,
+    "xmax": 520.0,
+    "ymin": -143.0,
+    "ymax": -143.0
+  },
+  {
+    "name": "D20Z02S03",
+    "door": "W",
+    "delay": false,
+    "xmin": 416.0,
+    "xmax": 502.0,
+    "ymin": -163.0,
+    "ymax": -138.4375
+  },
+  {
+    "name": "D20Z02S04",
+    "door": "W",
+    "delay": false,
+    "xmin": 338.0,
+    "xmax": 402.0,
+    "ymin": -164.0,
+    "ymax": -145.625
+  },
+  {
+    "name": "D20Z02S05",
+    "door": "SW",
+    "delay": false,
+    "xmin": 240.0,
+    "xmax": 322.0,
+    "ymin": -164.0,
+    "ymax": -141.53125
+  },
+  {
+    "name": "D20Z02S06",
+    "door": "SW",
+    "delay": false,
+    "xmin": 180.0,
+    "xmax": 220.0,
+    "ymin": -164.0,
+    "ymax": -135.28125
+  },
+  {
+    "name": "D20Z02S07",
+    "door": "W",
+    "delay": false,
+    "xmin": 160.0,
+    "xmax": 160.0,
+    "ymin": -141.0,
+    "ymax": -141.0
+  },
+  {
+    "name": "D20Z02S08",
+    "door": "E",
+    "delay": false,
+    "xmin": 129.90625,
+    "xmax": 139.90625,
+    "ymin": -140.375,
+    "ymax": -140.375
+  },
+  {
+    "name": "D20Z02S09",
+    "door": "E",
+    "delay": false,
+    "xmin": 120.0,
+    "xmax": 160.0,
+    "ymin": -165.0,
+    "ymax": -165.0
+  },
+  {
+    "name": "D20Z02S10",
+    "door": "W",
+    "delay": false,
+    "xmin": -220.0,
+    "xmax": -200.0,
+    "ymin": -165.0,
+    "ymax": -150.65625
+  },
+  {
+    "name": "D20Z02S11",
+    "door": "SW",
+    "delay": false,
+    "xmin": -280.0,
+    "xmax": -240.0,
+    "ymin": -164.0,
+    "ymax": -141.40625
+  },
+  {
+    "name": "D20Z02S12",
+    "door": "W",
+    "delay": false,
+    "xmin": -340.0,
+    "xmax": -300.0,
+    "ymin": -164.0,
+    "ymax": -157.96875
+  },
+  {
+    "name": "D20Z03S01",
+    "door": "W",
+    "delay": false,
+    "xmin": -300.0,
+    "xmax": -278.0,
+    "ymin": -110.0,
+    "ymax": -110.0
+  }
+]
