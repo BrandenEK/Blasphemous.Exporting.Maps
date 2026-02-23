@@ -189,6 +189,18 @@ public class MapExporter : BlasMod
         if (Input.GetKey(KeyCode.DownArrow))
             _cameraLocation += Vector2.down * Time.unscaledDeltaTime * CAMERA_SPEED;
 
+        float cameraHeight = Camera.main.orthographicSize * 2; // 11.25
+        float cameraWidth = cameraHeight * Camera.main.aspect; // 20
+
+        if (Input.GetKeyDown(KeyCode.Keypad2))
+            _cameraLocation += Vector2.down * (cameraHeight - 0.5f);
+        if (Input.GetKeyDown(KeyCode.Keypad4))
+            _cameraLocation += Vector2.left * (cameraWidth - 0.5f);
+        if (Input.GetKeyDown(KeyCode.Keypad6))
+            _cameraLocation += Vector2.right * (cameraWidth - 0.5f);
+        if (Input.GetKeyDown(KeyCode.Keypad8))
+            _cameraLocation += Vector2.up * (cameraHeight - 0.5f);
+
         // Clamp camera to bounds
         if (_cameraLocation.x < _cameraBounds.x)
             _cameraLocation.x = _cameraBounds.x;
