@@ -1,5 +1,68 @@
 [
   {
+    "name": "D01BZ02S01",
+    "door": "C",
+    "delay": false,
+    "xmin": 0.0,
+    "xmax": 0.0,
+    "ymin": 2.0,
+    "ymax": 2.0
+  },
+  {
+    "name": "D01BZ04S01",
+    "door": "church",
+    "delay": false,
+    "xmin": -451.0,
+    "xmax": -431.0,
+    "ymin": 14.0,
+    "ymax": 14.0
+  },
+  {
+    "name": "D01BZ05S01",
+    "door": "Reward",
+    "delay": false,
+    "xmin": -420.0,
+    "xmax": -420.0,
+    "ymin": -108.6875,
+    "ymax": -108.6875
+  },
+  {
+    "name": "D01BZ06S01",
+    "door": "Ossary",
+    "delay": false,
+    "xmin": -460.0,
+    "xmax": -440.0,
+    "ymin": 2.0,
+    "ymax": 2.0
+  },
+  {
+    "name": "D01BZ07S01",
+    "door": "Santos",
+    "delay": false,
+    "xmin": 7.0,
+    "xmax": 13.0,
+    "ymin": 0.0,
+    "ymax": 0.0
+  },
+  {
+    "name": "D01BZ08S01",
+    "door": "W",
+    "delay": false,
+    "xmin": -420.0,
+    "xmax": -402.0,
+    "ymin": 1.5,
+    "ymax": 1.5
+  },
+  {
+    "name": "D01BZ09S01",
+    "door": "W",
+    "delay": false,
+    "xmin": -352.0,
+    "xmax": -352.0,
+    "ymin": -105.5,
+    "ymax": -105.5
+  },
+  {
     "name": "D01Z01S01",
     "door": "W",
     "delay": true,
@@ -34,33 +97,6 @@
     "xmax": -740.0,
     "ymin": 13.0,
     "ymax": 13.0
-  },
-  {
-    "name": "D01BZ04S01",
-    "door": "church",
-    "delay": false,
-    "xmin": -451.0,
-    "xmax": -431.0,
-    "ymin": 14.0,
-    "ymax": 14.0
-  },
-  {
-    "name": "D01BZ06S01",
-    "door": "Ossary",
-    "delay": false,
-    "xmin": -460.0,
-    "xmax": -440.0,
-    "ymin": 2.0,
-    "ymax": 2.0
-  },
-  {
-    "name": "D01BZ08S01",
-    "door": "W",
-    "delay": false,
-    "xmin": -420.0,
-    "xmax": -402.0,
-    "ymin": 1.5,
-    "ymax": 1.5
   },
   {
     "name": "D01Z02S01",
@@ -187,15 +223,6 @@
     "xmax": -220.0,
     "ymin": 30.625,
     "ymax": 35.375
-  },
-  {
-    "name": "D01BZ02S01",
-    "door": "C",
-    "delay": false,
-    "xmin": 0.0,
-    "xmax": 0.0,
-    "ymin": 2.0,
-    "ymax": 2.0
   },
   {
     "name": "D01Z04S01",
@@ -358,24 +385,6 @@
     "xmax": -120.0,
     "ymin": -98.0,
     "ymax": -98.0
-  },
-  {
-    "name": "D01BZ05S01",
-    "door": "Reward",
-    "delay": false,
-    "xmin": -420.0,
-    "xmax": -420.0,
-    "ymin": -108.6875,
-    "ymax": -108.6875
-  },
-  {
-    "name": "D01BZ09S01",
-    "door": "W",
-    "delay": false,
-    "xmin": -352.0,
-    "xmax": -352.0,
-    "ymin": -105.5,
-    "ymax": -105.5
   },
   {
     "name": "D01Z05S01",
@@ -621,15 +630,6 @@
     "ymax": -9.875
   },
   {
-    "name": "D01BZ07S01",
-    "door": "Santos",
-    "delay": false,
-    "xmin": 7.0,
-    "xmax": 13.0,
-    "ymin": 0.0,
-    "ymax": 0.0
-  },
-  {
     "name": "D01Z06S01",
     "door": "N",
     "delay": false,
@@ -637,6 +637,15 @@
     "xmax": -660.0,
     "ymin": 0.375,
     "ymax": 0.375
+  },
+  {
+    "name": "D02BZ02S01",
+    "door": "C",
+    "delay": false,
+    "xmin": 0.0,
+    "xmax": 0.0,
+    "ymin": 2.0,
+    "ymax": 2.0
   },
   {
     "name": "D02Z01S01",
@@ -709,15 +718,6 @@
     "xmax": -239.0,
     "ymin": 78.0,
     "ymax": 78.0
-  },
-  {
-    "name": "D02BZ02S01",
-    "door": "C",
-    "delay": false,
-    "xmin": 0.0,
-    "xmax": 0.0,
-    "ymin": 2.0,
-    "ymax": 2.0
   },
   {
     "name": "D02Z02S01",
@@ -1053,6 +1053,15 @@
     "ymax": 219.0
   },
   {
+    "name": "D03BZ01S01",
+    "door": "W",
+    "delay": false,
+    "xmin": -520.0,
+    "xmax": -520.0,
+    "ymin": -232.0,
+    "ymax": -225.5625
+  },
+  {
     "name": "D03Z01S01",
     "door": "W",
     "delay": false,
@@ -1242,15 +1251,6 @@
     "ymax": -88.0
   },
   {
-    "name": "D03BZ01S01",
-    "door": "W",
-    "delay": false,
-    "xmin": -520.0,
-    "xmax": -520.0,
-    "ymin": -232.0,
-    "ymax": -225.5625
-  },
-  {
     "name": "D03Z03S01",
     "door": "W",
     "delay": false,
@@ -1422,6 +1422,24 @@
     "ymax": -198.0
   },
   {
+    "name": "D04BZ02S01",
+    "door": "Redento",
+    "delay": false,
+    "xmin": 559.0,
+    "xmax": 559.0,
+    "ymin": 65.3125,
+    "ymax": 65.3125
+  },
+  {
+    "name": "D04BZ03S01",
+    "door": "E",
+    "delay": false,
+    "xmin": 207.0,
+    "xmax": 280.0,
+    "ymin": 67.0,
+    "ymax": 67.0
+  },
+  {
     "name": "D04Z01S01",
     "door": "W",
     "delay": false,
@@ -1474,24 +1492,6 @@
     "xmax": 60.0,
     "ymin": 76.625,
     "ymax": 83.875
-  },
-  {
-    "name": "D04BZ02S01",
-    "door": "Redento",
-    "delay": false,
-    "xmin": 559.0,
-    "xmax": 559.0,
-    "ymin": 65.3125,
-    "ymax": 65.3125
-  },
-  {
-    "name": "D04BZ03S01",
-    "door": "E",
-    "delay": false,
-    "xmin": 207.0,
-    "xmax": 280.0,
-    "ymin": 67.0,
-    "ymax": 67.0
   },
   {
     "name": "D04Z02S01",
@@ -1755,6 +1755,15 @@
     "ymax": 11.0
   },
   {
+    "name": "D05BZ02S01",
+    "door": "C",
+    "delay": false,
+    "xmin": 0.0,
+    "xmax": 0.0,
+    "ymin": 2.0,
+    "ymax": 2.0
+  },
+  {
     "name": "D05Z01S01",
     "door": "W",
     "delay": false,
@@ -1969,15 +1978,6 @@
     "xmax": 80.0,
     "ymin": -22.0,
     "ymax": -22.0
-  },
-  {
-    "name": "D05BZ02S01",
-    "door": "C",
-    "delay": false,
-    "xmin": 0.0,
-    "xmax": 0.0,
-    "ymin": 2.0,
-    "ymax": 2.0
   },
   {
     "name": "D05Z02S01",
